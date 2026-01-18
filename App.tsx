@@ -4,6 +4,7 @@ import BentoGrid from './components/BentoGrid';
 import Footer from './components/Footer';
 import PWAInstallPrompt from './components/PWAInstallPrompt';
 import LoadingScreen from './components/LoadingScreen';
+import ErrorBoundary from './components/ErrorBoundary';
 import { ThemeProvider, useTheme } from './contexts/ThemeContext';
 import { useServiceWorker } from './hooks/useServiceWorker';
 
@@ -65,9 +66,11 @@ const AppContent: React.FC = () => {
 
 const App: React.FC = () => {
   return (
-    <ThemeProvider>
-      <AppContent />
-    </ThemeProvider>
+    <ErrorBoundary>
+      <ThemeProvider>
+        <AppContent />
+      </ThemeProvider>
+    </ErrorBoundary>
   );
 };
 

@@ -19,10 +19,18 @@
 - **Componente reutilizável**: `SkeletonLoader.tsx` com variantes (card, text, circle, rectangle)
 
 ### **Sistema de Tema Completo**
+
 - ✅ **Alternância claro/escuro** com persistência
 - ✅ **Logos condicionais** baseados no tema
 - ✅ **Variáveis CSS** em todos os componentes principais
 - ✅ **Background dinâmico** (só mostra no escuro)
+
+### **Error Boundaries**
+- ✅ **ErrorBoundary component** com UI amigável
+- ✅ **Aplicado no App principal** (protege toda aplicação)
+- ✅ **Aplicado em cada widget** (isolamento de falhas)
+- ✅ **Retry e navegação** para recuperação
+- ✅ **Detalhes técnicos** em desenvolvimento
 
 ## 🚀 **Melhorias Sugeridas - UI/UX**
 
@@ -93,8 +101,9 @@
    - AgendaWidget: skeletons para lista de programas (1.5s)
    - CommunityInstagramWidget: skeleton para carrossel (2s)
 
-2. [ ] **Error boundaries** com UI amigável
+2. ✅ **Error boundaries** com UI amigável - IMPLEMENTADO
 3. [ ] **Focus indicators** visuais nos botões
+4. ✅ **Touch targets** adequados - IMPLEMENTADO (44px mínimo nos botões)
 4. ✅ **Touch targets** adequados - IMPLEMENTADO (44px mínimo nos botões)
 2. **Error boundaries** com UI amigável
 3. **Focus indicators** para acessibilidade
@@ -128,5 +137,5 @@ Para implementar qualquer melhoria, siga o padrão:
 
 ---
 
-**🎯 Status Atual**: Loading screen + Skeleton loaders + Tema completo implementados!
-**📊 Progresso**: 8/25 melhorias implementadas (32% concluído)
+**🎯 Status Atual**: Loading screen + Skeleton loaders + Tema completo + Error boundaries implementados!
+**📊 Progresso**: 9/25 melhorias implementadas (36% concluído)
