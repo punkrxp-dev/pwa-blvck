@@ -152,7 +152,7 @@ O aplicativo inclui **dados meteorológicos em tempo real** baseados na localiza
 2. **Configure variáveis**: Copie `env.example` para `.env`
 3. **Adicione chave**: `VITE_OPENWEATHER_API_KEY=sua_chave_aqui`
 
-📖 **Guia completo**: Veja [WEATHER_API_SETUP.md](WEATHER_API_SETUP.md) para instruções detalhadas.
+📖 **Guia completo**: Veja [WEATHER_API_SETUP.md](docs/WEATHER_API_SETUP.md) para instruções detalhadas.
 
 ### 🔄 Atualização de Dados
 - **Botão refresh** 🔄 no widget para atualizar manualmente

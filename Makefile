@@ -161,7 +161,7 @@ setup-weather: ## Configura API de clima (cria .env se não existir)
 		cp env.example .env; \
 		echo "$(GREEN)✅ Arquivo .env criado a partir de env.example$(NC)"; \
 		echo "$(YELLOW)⚠️  Edite o arquivo .env com sua chave da OpenWeatherMap API$(NC)"; \
-		echo "$(BLUE)📖 Leia: WEATHER_API_SETUP.md para instruções completas$(NC)"; \
+		echo "$(BLUE)📖 Leia: docs/WEATHER_API_SETUP.md para instruções completas$(NC)"; \
 	else \
 		echo "$(YELLOW)⚠️  Arquivo .env já existe$(NC)"; \
 	fi
