@@ -44,6 +44,7 @@ const CommunityInstagramWidget: React.FC = () => {
   const [currentPostIndex, setCurrentPostIndex] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
+  const overlayTextClass = 'text-white drop-shadow-[0_0_10px_rgba(0,0,0,0.85)]';
 
   // Simular carregamento inicial das imagens
   useEffect(() => {
@@ -171,13 +172,13 @@ const CommunityInstagramWidget: React.FC = () => {
       <div className="absolute top-4 left-4 right-4 z-20 flex items-center justify-between">
         {/* Logo do Instagram */}
         <div className="flex items-center gap-2 bg-[var(--bg-secondary)]/60 backdrop-blur-sm rounded-full px-3 py-1.5">
-          <Instagram size={14} className="text-[var(--text-primary)]" />
-          <span className="text-xs font-bold text-[var(--text-primary)]">@PUNK.BLVCK</span>
+          <Instagram size={14} className={overlayTextClass} />
+          <span className={`text-xs font-bold ${overlayTextClass}`}>@PUNK.BLVCK</span>
         </div>
 
         {/* Contador de posts */}
         <div className="bg-[var(--bg-secondary)]/60 backdrop-blur-sm rounded-full px-2 py-1">
-          <span className="text-xs text-[var(--text-secondary)] font-medium">
+          <span className={`text-xs font-medium ${overlayTextClass}`}>
             {currentPostIndex + 1}/{instagramPosts.length}
           </span>
         </div>
@@ -185,7 +186,7 @@ const CommunityInstagramWidget: React.FC = () => {
 
       {/* Estatísticas do post (curtidas, comentários) */}
       <div className="absolute bottom-16 left-4 right-4 z-20">
-        <div className="flex items-center gap-4 text-[var(--text-primary)]/90">
+        <div className={`flex items-center gap-4 ${overlayTextClass}`}>
           <div className="flex items-center gap-1">
             <Heart size={14} className="text-red-500" />
             <span className="text-xs font-medium">{currentPost.likes.toLocaleString()}</span>
@@ -201,20 +202,20 @@ const CommunityInstagramWidget: React.FC = () => {
       <div className="relative z-10 p-6 w-full h-full flex flex-col justify-end items-start text-left">
         {/* Caption do post atual */}
         <div className="mb-4">
-          <p className="text-sm font-black text-[#FF5F1F] uppercase tracking-wider leading-tight">
+          <p className={`text-sm font-black uppercase tracking-wider leading-tight ${overlayTextClass}`}>
             {currentPost.caption}
           </p>
         </div>
 
         {/* Título da comunidade */}
         <div>
-          <h3 className="text-2xl font-black italic tracking-tighter leading-none uppercase group-hover:tracking-normal transition-all duration-500 mb-1">
+          <h3 className={`text-2xl font-black italic tracking-tighter leading-none uppercase group-hover:tracking-normal transition-all duration-500 mb-1 ${overlayTextClass}`}>
             COMMUNITY
           </h3>
-          <p className="text-[10px] text-[var(--text-muted)] uppercase font-medium tracking-[0.2em]">
+          <p className={`text-[10px] uppercase font-medium tracking-[0.2em] ${overlayTextClass}`}>
             @PUNK.BLVCK
           </p>
-          <p className="text-[9px] text-[var(--text-muted)] mt-1 uppercase font-medium tracking-[0.15em]">
+          <p className={`text-[9px] mt-1 uppercase font-medium tracking-[0.15em] ${overlayTextClass}`}>
             The lifestyle of the new power
           </p>
         </div>
