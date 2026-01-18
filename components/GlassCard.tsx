@@ -3,7 +3,7 @@ import React from 'react';
 interface GlassCardProps {
   children: React.ReactNode;
   className?: string;
-  span?: 'col-1' | 'col-2' | 'row-2' | 'large';
+  span?: 'col-1' | 'col-2' | 'row-2' | 'row-3' | 'large';
 }
 
 const GlassCard: React.FC<GlassCardProps> = ({ children, className = "", span = "col-1" }) => {
@@ -11,6 +11,7 @@ const GlassCard: React.FC<GlassCardProps> = ({ children, className = "", span = 
     'col-1': 'col-span-1 row-span-1',
     'col-2': 'col-span-2 row-span-1',
     'row-2': 'col-span-2 row-span-2',
+    'row-3': 'col-span-2 row-span-3',
     'large': 'col-span-2 row-span-2',
   };
 

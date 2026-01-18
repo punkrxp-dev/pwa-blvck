@@ -82,7 +82,7 @@ const CommunityInstagramWidget: React.FC = () => {
 
   return (
     <GlassCard
-      span="col-2"
+      span="row-2"
       className="relative overflow-hidden bg-[var(--bg-secondary)] border-[var(--border-color)] group cursor-pointer"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
@@ -199,7 +199,7 @@ const CommunityInstagramWidget: React.FC = () => {
       </div>
 
       {/* Conteúdo principal */}
-      <div className="relative z-10 p-6 w-full h-full flex flex-col justify-end items-start text-left">
+      <div className="relative z-[5] p-6 w-full h-full flex flex-col justify-end items-start text-left">
         {/* Caption do post atual */}
         <div className="mb-4">
           <p className={`text-sm font-black uppercase tracking-wider leading-tight ${overlayTextClass}`}>
