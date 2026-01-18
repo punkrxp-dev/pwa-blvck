@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { MapPin, MessageCircle, Instagram, Clock } from 'lucide-react';
+import ScheduleModal from './ScheduleModal';
 
 const BottomNav: React.FC = () => {
+  const [isScheduleOpen, setIsScheduleOpen] = useState(false);
   const navigationItems = [
     {
       id: 'location',
@@ -28,8 +30,8 @@ const BottomNav: React.FC = () => {
       id: 'schedule',
       label: 'Horários',
       icon: Clock,
-      href: 'https://wa.me/+5562993236427?text=Gostaria%20de%20saber%20os%20hor%C3%A1rios%20dos%20treinos',
-      ariaLabel: 'Consultar horários de funcionamento'
+      onClick: () => setIsScheduleOpen(true),
+      ariaLabel: 'Ver horários de funcionamento'
     }
   ];
 
@@ -42,15 +44,10 @@ const BottomNav: React.FC = () => {
         <div className="grid grid-cols-4 gap-2 p-3 rounded-3xl bg-[var(--bg-secondary)]/95 backdrop-blur-2xl border border-[var(--border-color)] shadow-[0_-10px_40px_-15px_rgba(0,0,0,0.3)]">
           {navigationItems.map((item) => {
             const Icon = item.icon;
-            return (
-              <a
-                key={item.id}
-                href={item.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={item.ariaLabel}
-                className="flex flex-col items-center justify-center gap-2 py-3 px-2 rounded-2xl transition-all duration-300 hover:bg-[#FF5F1F]/10 active:scale-95 group"
-              >
+            const isButton = 'onClick' in item;
+            
+            const content = (
+              <>
                 <div className="relative">
                   <Icon 
                     size={22} 
@@ -63,11 +60,44 @@ const BottomNav: React.FC = () => {
                 <span className="text-[9px] font-bold uppercase tracking-wider text-[var(--text-secondary)] group-hover:text-[#FF5F1F] group-active:text-[#FF5F1F] transition-colors leading-tight text-center">
                   {item.label}
                 </span>
+              </>
+            );
+
+            const className = "flex flex-col items-center justify-center gap-2 py-3 px-2 rounded-2xl transition-all duration-300 hover:bg-[#FF5F1F]/10 active:scale-95 group";
+
+            if (isButton) {
+              return (
+                <button
+                  key={item.id}
+                  onClick={item.onClick}
+                  aria-label={item.ariaLabel}
+                  className={className}
+                >
+                  {content}
+                </button>
+              );
+            }
+
+            return (
+              <a
+                key={item.id}
+                href={item.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={item.ariaLabel}
+                className={className}
+              >
+                {content}
               </a>
             );
           })}
         </div>
       </div>
+
+      <ScheduleModal 
+        isOpen={isScheduleOpen} 
+        onClose={() => setIsScheduleOpen(false)} 
+      />
     </nav>
   );
 };
