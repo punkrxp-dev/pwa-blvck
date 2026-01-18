@@ -21,7 +21,7 @@ export default defineConfig(({ mode }) => {
           manifest: {
             name: 'PUNK | BLVCK - Presence is the new power',
             short_name: 'PUNK BLVCK',
-            description: 'Centro de treinamento premium com presença como poder',
+            description: 'Centro de treinamento contemporâneo com presença como poder',
             theme_color: '#FF5F1F',
             background_color: '#000000',
             display: 'standalone',

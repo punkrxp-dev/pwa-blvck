@@ -1,7 +1,7 @@
 
 {
   "name": "PUNK | BLVCK",
-  "description": "High-end training center and functional fitness PWA for the elite. Presence is the new power.",
+  "description": "Contemporary training center and functional fitness PWA. Presence is the new power.",
   "requestFramePermissions": [
     "geolocation"
   ]

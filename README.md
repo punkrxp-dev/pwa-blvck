@@ -1,6 +1,6 @@
 # PUNK | BLVCK
 
-> **Presence is the new power.** — Centro de treinamento premium com orientação personalizada.
+> **Presence is the new power.** — Centro de treinamento contemporâneo com orientação personalizada.
 
 [![Build Status](https://img.shields.io/badge/build-passing-brightgreen)](https://github.com)
 [![Security](https://img.shields.io/badge/security-hardened-blue)](https://github.com)

@@ -71,7 +71,7 @@ const AgendaWidget: React.FC = () => {
       </div>
 
       <div className="mt-4 pt-3 border-t border-[var(--border-color)] text-center shrink-0">
-         <p className="text-[8px] font-black text-[var(--text-muted)] tracking-[0.3em] uppercase">Forging the elite 24/7</p>
+         <p className="text-[8px] font-black text-[var(--text-muted)] tracking-[0.3em] uppercase">Performance com método 24/7</p>
       </div>
     </GlassCard>
   );

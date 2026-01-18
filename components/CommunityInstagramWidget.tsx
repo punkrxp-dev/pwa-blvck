@@ -36,7 +36,7 @@ const instagramPosts = [
     likes: 198,
     comments: 6,
     caption: 'LUXURY FITNESS',
-    alt: 'Ambiente premium da academia'
+    alt: 'Ambiente sofisticado da academia'
   }
 ];
 

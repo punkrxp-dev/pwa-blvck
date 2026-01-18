@@ -111,7 +111,7 @@ const instagramPosts = [
     likes: 198,
     comments: 9,
     caption: 'LUXURY FITNESS',
-    alt: 'Ambiente premium da academia'
+    alt: 'Ambiente sofisticado da academia'
   }
 ];
 ```
@@ -170,7 +170,7 @@ onError={(e) => {
 1. **Post 1**: Mais visual (primeira impressão)
 2. **Post 2**: Mais engajador (alta interação)
 3. **Post 3**: Mais impactante (transformação)
-4. **Post 4**: Call-to-action (ambiente premium)
+4. **Post 4**: Call-to-action (ambiente sofisticado)
 
 ### Captions por Posição
 - **Posição 1**: "FORÇA COM MÉTODO" (introdução)

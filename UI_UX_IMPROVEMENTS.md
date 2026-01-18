@@ -42,6 +42,7 @@
 - ✅ **Informações de segurança** sobre privacidade
 
 ### **Otimizações de Performance**
+
 - ✅ **Transições otimizadas** (duration-200 para 300ms)
 - ✅ **requestAnimationFrame** para mudanças de tema
 - ✅ **localStorage assíncrono** para não bloquear UI
