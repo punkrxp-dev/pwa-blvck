@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import GlassCard from './GlassCard';
+import SkeletonLoader from './SkeletonLoader';
 import { ChevronLeft, ChevronRight, Instagram, Heart, MessageCircle, Share } from 'lucide-react';
 
 // URLs de imagens do Instagram (posts públicos podem ser acessados diretamente)
@@ -42,17 +43,27 @@ const instagramPosts = [
 const CommunityInstagramWidget: React.FC = () => {
   const [currentPostIndex, setCurrentPostIndex] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+
+  // Simular carregamento inicial das imagens
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 2000); // 2 segundos para simular carregamento das imagens
+
+    return () => clearTimeout(timer);
+  }, []);
 
   // Auto-rotate das imagens a cada 6 segundos
   useEffect(() => {
-    if (isHovered) return; // Pausa quando o mouse está sobre o componente
+    if (isHovered || isLoading) return; // Pausa quando o mouse está sobre ou carregando
 
     const interval = setInterval(() => {
       setCurrentPostIndex((prev) => (prev + 1) % instagramPosts.length);
     }, 6000);
 
     return () => clearInterval(interval);
-  }, [isHovered]);
+  }, [isHovered, isLoading]);
 
   const nextPost = () => {
     setCurrentPostIndex((prev) => (prev + 1) % instagramPosts.length);
@@ -75,32 +86,44 @@ const CommunityInstagramWidget: React.FC = () => {
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      {/* Carrossel de imagens */}
-      <div className="absolute inset-0">
-        {instagramPosts.map((post, index) => (
-          <div
-            key={post.id}
-            className={`absolute inset-0 transition-all duration-1000 ease-in-out ${
-              index === currentPostIndex
-                ? 'opacity-100 scale-100'
-                : 'opacity-0 scale-105'
-            }`}
-          >
-            <img
-              src={post.imageUrl}
-              alt={post.alt}
-              className="w-full h-full object-cover"
-              loading="lazy"
-              onError={(e) => {
-                // Fallback para uma imagem padrão se a URL falhar
-                console.warn('Imagem do Instagram não carregou:', post.imageUrl);
-                (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&q=80&w=800&h=600';
-              }}
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent" />
+      {/* Carrossel de imagens ou skeleton loader */}
+      {isLoading ? (
+        <div className="absolute inset-0 flex items-center justify-center">
+          <div className="text-center space-y-4">
+            <SkeletonLoader className="w-full h-full absolute inset-0" />
+            <div className="relative z-10">
+              <SkeletonLoader variant="circle" className="w-8 h-8 mx-auto" />
+              <SkeletonLoader className="h-4 w-24 mx-auto mt-2" />
+            </div>
           </div>
-        ))}
-      </div>
+        </div>
+      ) : (
+        <div className="absolute inset-0">
+          {instagramPosts.map((post, index) => (
+            <div
+              key={post.id}
+              className={`absolute inset-0 transition-all duration-1000 ease-in-out ${
+                index === currentPostIndex
+                  ? 'opacity-100 scale-100'
+                  : 'opacity-0 scale-105'
+              }`}
+            >
+              <img
+                src={post.imageUrl}
+                alt={post.alt}
+                className="w-full h-full object-cover"
+                loading="lazy"
+                onError={(e) => {
+                  // Fallback para uma imagem padrão se a URL falhar
+                  console.warn('Imagem do Instagram não carregou:', post.imageUrl);
+                  (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&q=80&w=800&h=600';
+                }}
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent" />
+            </div>
+          ))}
+        </div>
+      )}
 
       {/* Controles de navegação */}
       <button

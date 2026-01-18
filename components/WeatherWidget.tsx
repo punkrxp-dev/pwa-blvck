@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import GlassCard from './GlassCard';
+import SkeletonLoader from './SkeletonLoader';
 import { Sun, MapPin, AlertCircle, Navigation, RefreshCw } from 'lucide-react';
 import { WeatherData } from '../types';
 import logger from '../utils/logger';
@@ -135,9 +136,9 @@ const WeatherWidget: React.FC = () => {
 
       <div className="flex flex-col items-center justify-center flex-grow py-2">
         {isLoading && !weather ? (
-          <div className="animate-pulse">
-            <div className="h-12 w-16 bg-[var(--glass-bg-light)] rounded mb-2"></div>
-            <div className="h-3 w-12 bg-[var(--glass-border-light)] rounded"></div>
+          <div className="flex flex-col items-center space-y-3">
+            <SkeletonLoader className="h-12 w-16" />
+            <SkeletonLoader className="h-3 w-12" />
           </div>
         ) : (
           <>

@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import GlassCard from './GlassCard';
+import SkeletonLoader from './SkeletonLoader';
 import { ChevronRight, Zap } from 'lucide-react';
 
 interface ProgramItem {
@@ -16,6 +17,17 @@ const programs: ProgramItem[] = [
 ];
 
 const AgendaWidget: React.FC = () => {
+  const [isLoading, setIsLoading] = useState(true);
+
+  // Simular carregamento dos programas
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 1500); // 1.5 segundos para simular carregamento
+
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <GlassCard span="row-2" className="flex flex-col">
       <div className="flex items-center justify-between mb-5">
@@ -30,17 +42,32 @@ const AgendaWidget: React.FC = () => {
       </div>
 
       <div className="space-y-3 flex-grow overflow-y-auto no-scrollbar pr-1">
-        {programs.map((prog) => (
-          <div key={prog.id} className="group cursor-pointer">
-            <div className="flex items-center justify-between p-4 rounded-[1.8rem] bg-[var(--glass-bg-light)] border border-[var(--glass-border-light)] transition-all duration-300 ease-out group-hover:bg-[#FF5F1F]/10 group-hover:border-[#FF5F1F]/20 group-hover:scale-[1.02] group-hover:shadow-[0_8px_20px_-10px_rgba(255,95,31,0.2)] group-active:scale-[0.98]">
-               <div className="flex flex-col">
-                  <h4 className="text-sm font-black tracking-tight leading-none uppercase italic transition-colors group-hover:text-[var(--text-primary)]">{prog.title}</h4>
-                  <p className="text-[11px] font-thin tracking-[0.2em] uppercase text-[var(--text-secondary)] leading-tight mt-1.5 group-hover:text-[var(--text-primary)]/70">{prog.subtitle}</p>
-               </div>
-               <ChevronRight size={14} className="text-[var(--text-muted)] shrink-0 transition-all group-hover:text-[#FF5F1F] group-hover:translate-x-1" />
+        {isLoading ? (
+          // Skeleton loaders para os programas
+          Array.from({ length: 4 }).map((_, index) => (
+            <div key={index} className="p-4 rounded-[1.8rem] bg-[var(--glass-bg-light)] border border-[var(--glass-border-light)]">
+              <div className="flex items-center justify-between">
+                <div className="flex flex-col space-y-2">
+                  <SkeletonLoader className="h-4 w-24" />
+                  <SkeletonLoader className="h-3 w-16" />
+                </div>
+                <SkeletonLoader className="h-3 w-3 rounded-full" />
+              </div>
             </div>
-          </div>
-        ))}
+          ))
+        ) : (
+          programs.map((prog) => (
+            <div key={prog.id} className="group cursor-pointer">
+              <div className="flex items-center justify-between p-4 rounded-[1.8rem] bg-[var(--glass-bg-light)] border border-[var(--glass-border-light)] transition-all duration-300 ease-out group-hover:bg-[#FF5F1F]/10 group-hover:border-[#FF5F1F]/20 group-hover:scale-[1.02] group-hover:shadow-[0_8px_20px_-10px_rgba(255,95,31,0.2)] group-active:scale-[0.98]">
+                 <div className="flex flex-col">
+                    <h4 className="text-sm font-black tracking-tight leading-none uppercase italic transition-colors group-hover:text-[var(--text-primary)]">{prog.title}</h4>
+                    <p className="text-[11px] font-thin tracking-[0.2em] uppercase text-[var(--text-secondary)] leading-tight mt-1.5 group-hover:text-[var(--text-primary)]/70">{prog.subtitle}</p>
+                 </div>
+                 <ChevronRight size={14} className="text-[var(--text-muted)] shrink-0 transition-all group-hover:text-[#FF5F1F] group-hover:translate-x-1" />
+              </div>
+            </div>
+          ))
+        )}
       </div>
 
       <div className="mt-4 pt-3 border-t border-[var(--border-color)] text-center shrink-0">
