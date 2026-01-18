@@ -39,6 +39,17 @@ const Footer: React.FC = () => {
             © {currentYear} PUNK | BLVCK
           </p>
         </div>
+
+        <div className="pt-6 border-t border-[var(--border-color)]/30">
+          <a
+            href="https://www.flowoff.xyz/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[9px] font-medium uppercase tracking-[0.2em] text-[var(--text-secondary)] hover:text-[#FF5F1F] transition-colors opacity-50 hover:opacity-100"
+          >
+            Desenvolvido por NEØFlow
+          </a>
+        </div>
       </div>
     </footer>
   );
