@@ -26,11 +26,20 @@
 - ✅ **Background dinâmico** (só mostra no escuro)
 
 ### **Error Boundaries**
+
 - ✅ **ErrorBoundary component** com UI amigável
 - ✅ **Aplicado no App principal** (protege toda aplicação)
 - ✅ **Aplicado em cada widget** (isolamento de falhas)
 - ✅ **Retry e navegação** para recuperação
 - ✅ **Detalhes técnicos** em desenvolvimento
+
+### **Focus Indicators**
+- ✅ **Estilos CSS globais** para :focus-visible
+- ✅ **Indicadores visuais** com cor tema (var(--punk-orange))
+- ✅ **Box-shadow** elegante nos botões
+- ✅ **Outline offset** para melhor visibilidade
+- ✅ **Suporte a prefers-reduced-motion**
+- ✅ **Aplicado em todos os componentes** (botões limpos de estilos inline)
 
 ## 🚀 **Melhorias Sugeridas - UI/UX**
 
@@ -102,7 +111,7 @@
    - CommunityInstagramWidget: skeleton para carrossel (2s)
 
 2. ✅ **Error boundaries** com UI amigável - IMPLEMENTADO
-3. [ ] **Focus indicators** visuais nos botões
+3. ✅ **Focus indicators** visuais nos botões - IMPLEMENTADO
 4. ✅ **Touch targets** adequados - IMPLEMENTADO (44px mínimo nos botões)
 4. ✅ **Touch targets** adequados - IMPLEMENTADO (44px mínimo nos botões)
 2. **Error boundaries** com UI amigável
@@ -137,5 +146,5 @@ Para implementar qualquer melhoria, siga o padrão:
 
 ---
 
-**🎯 Status Atual**: Loading screen + Skeleton loaders + Tema completo + Error boundaries implementados!
-**📊 Progresso**: 9/25 melhorias implementadas (36% concluído)
+**🎯 Status Atual**: Loading screen + Skeleton loaders + Tema completo + Error boundaries + Focus indicators implementados!
+**📊 Progresso**: 10/25 melhorias implementadas (40% concluído)

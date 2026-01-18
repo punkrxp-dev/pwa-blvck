@@ -209,7 +209,7 @@ const TimerWidget: React.FC = () => {
       <div className="flex items-center justify-center gap-3 pt-3 border-t border-white/5 mt-auto">
         <button
           onClick={toggleTimer}
-          className={`flex items-center justify-center transition-all w-10 h-10 rounded-full active:scale-90 glass-noise border-[var(--glass-border-light)] focus:outline-none focus:ring-2 focus:ring-[#FF5F1F]/50 ${isRunning ? 'text-[var(--text-primary)] bg-[var(--glass-bg-light)]' : 'text-[#FF5F1F]'}`}
+          className={`flex items-center justify-center transition-all w-10 h-10 rounded-full active:scale-90 glass-noise border-[var(--glass-border-light)] ${isRunning ? 'text-[var(--text-primary)] bg-[var(--glass-bg-light)]' : 'text-[#FF5F1F]'}`}
           aria-label={isRunning ? 'Pausar cronômetro' : 'Iniciar cronômetro'}
           disabled={false}
         >
@@ -217,7 +217,7 @@ const TimerWidget: React.FC = () => {
         </button>
         <button
           onClick={resetTimer}
-          className="text-[var(--text-muted)] hover:text-[var(--text-secondary)] transition-all p-2 active:scale-75 focus:outline-none focus:ring-2 focus:ring-[#FF5F1F]/50 rounded"
+          className="text-[var(--text-muted)] hover:text-[var(--text-secondary)] transition-all p-2 active:scale-75 rounded"
           aria-label="Zerar cronômetro"
         >
           <RotateCcw size={16} />

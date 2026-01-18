@@ -38,7 +38,7 @@ const ThemeToggle: React.FC = () => {
   return (
     <button
       onClick={handleThemeChange}
-      className="p-2 rounded-full hover:bg-[var(--glass-bg-light)] transition-colors focus:outline-none focus:ring-2 focus:ring-[#FF5F1F]/50"
+      className="p-2 rounded-full hover:bg-[var(--glass-bg-light)] transition-colors"
       title={`Alternar tema - ${getThemeLabel()}`}
       aria-label={`Alternar tema - ${getThemeLabel()}`}
     >

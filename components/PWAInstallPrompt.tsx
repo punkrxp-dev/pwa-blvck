@@ -125,7 +125,7 @@ const PWAInstallPrompt: React.FC = () => {
           <div className="flex items-center gap-2 flex-shrink-0">
             <button
               onClick={handleInstall}
-              className="px-4 py-2 bg-[#FF5F1F] text-white text-xs font-bold rounded-full hover:bg-[#FF5F1F]/90 transition-colors focus:outline-none focus:ring-2 focus:ring-[#FF5F1F]/50"
+              className="px-4 py-2 bg-[#FF5F1F] text-white text-xs font-bold rounded-full hover:bg-[#FF5F1F]/90 transition-colors"
             >
               <Download size={14} className="inline mr-1" />
               Instalar
@@ -133,7 +133,7 @@ const PWAInstallPrompt: React.FC = () => {
 
             <button
               onClick={handleDismiss}
-              className="p-1 text-[var(--text-muted)] hover:text-[var(--text-secondary)] transition-colors focus:outline-none focus:ring-2 focus:ring-[var(--border-color)] rounded-full"
+              className="p-1 text-[var(--text-muted)] hover:text-[var(--text-secondary)] transition-colors rounded-full"
               aria-label="Dispensar"
             >
               <X size={16} />
