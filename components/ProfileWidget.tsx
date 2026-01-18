@@ -24,7 +24,7 @@ const ProfileWidget: React.FC = () => {
         <div>
           <h3 className="text-sm font-black tracking-tight leading-none uppercase italic">Alex Silva</h3>
           <div className="flex items-center gap-1.5 mt-1.5">
-            <span className="text-[8px] uppercase tracking-[0.25em] text-[#FF5F1F] font-black bg-[#FF5F1F]/10 px-2 py-0.5 rounded-sm">ELITE MEMBER</span>
+            <span className="text-[8px] uppercase tracking-[0.25em] text-[#FF5F1F] font-black bg-[#FF5F1F]/10 px-2 py-0.5 rounded-sm">MEMBRO BLVCK</span>
           </div>
         </div>
       </div>

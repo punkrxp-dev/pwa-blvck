@@ -7,6 +7,7 @@ Os indicadores de foco foram implementados para melhorar a acessibilidade do PUN
 ## 🎨 Estilos Implementados
 
 ### **Indicadores Globais**
+
 ```css
 :focus-visible {
   outline: 2px solid var(--punk-orange);
@@ -16,6 +17,7 @@ Os indicadores de foco foram implementados para melhorar a acessibilidade do PUN
 ```
 
 ### **Botões Específicos**
+
 ```css
 button:focus-visible,
 [role="button"]:focus-visible {
@@ -26,6 +28,7 @@ button:focus-visible,
 ```
 
 ### **Links**
+
 ```css
 a:focus-visible {
   outline: 2px solid var(--punk-orange);
@@ -35,6 +38,7 @@ a:focus-visible {
 ```
 
 ### **Formulários**
+
 ```css
 input:focus-visible,
 textarea:focus-visible,

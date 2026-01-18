@@ -48,16 +48,12 @@ const LoadingScreen: React.FC = () => {
 
 
         {/* Loading Animation */}
-        <div className="relative mt-8">
-          {/* Outer Ring */}
-          <div className="w-16 h-16 border-4 border-[#FF5F1F]/20 rounded-full animate-spin">
-            {/* Inner Ring */}
-            <div className="absolute top-0 left-0 w-16 h-16 border-4 border-transparent border-t-[#FF5F1F] rounded-full animate-spin"
-                 style={{ animationDirection: 'reverse', animationDuration: '1.5s' }} />
+        <div className="flex items-center justify-center mt-8 gap-3">
+          <div className="loader">
+            <span className="bg-[#FF5F1F]" />
+            <span className="bg-[#FF5F1F]" />
+            <span className="bg-[#FF5F1F]" />
           </div>
-
-          {/* Center Dot */}
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-2 h-2 bg-[#FF5F1F] rounded-full animate-pulse" />
         </div>
 
         {/* Loading Message */}

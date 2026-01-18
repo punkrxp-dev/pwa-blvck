@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Header from './components/Header';
 import BentoGrid from './components/BentoGrid';
 import Footer from './components/Footer';
+import BottomNav from './components/BottomNav';
 import PWAInstallPrompt from './components/PWAInstallPrompt';
 import LoadingScreen from './components/LoadingScreen';
 import ErrorBoundary from './components/ErrorBoundary';
@@ -60,6 +61,7 @@ const AppContent: React.FC = () => {
 
       <Footer />
       <PWAInstallPrompt />
+      <BottomNav />
     </div>
   );
 };
