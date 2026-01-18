@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import GlassCard from './GlassCard';
 import SkeletonLoader from './SkeletonLoader';
+import ModalLocationPermission from './ModalLocationPermission';
 import { Sun, MapPin, AlertCircle, Navigation, RefreshCw } from 'lucide-react';
 import { WeatherData } from '../types';
 import logger from '../utils/logger';
@@ -12,6 +13,7 @@ const WeatherWidget: React.FC = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [isRefreshing, setIsRefreshing] = useState(false);
   const [locationPermission, setLocationPermission] = useState<boolean | null>(null);
+  const [showLocationModal, setShowLocationModal] = useState(false);
 
   const loadWeatherData = useCallback(async (showLoading = true) => {
     try {
@@ -66,10 +68,16 @@ const WeatherWidget: React.FC = () => {
     loadWeatherData(false);
   }, [loadWeatherData]);
 
-  const handleRequestLocation = useCallback(async () => {
+  const handleRequestLocation = useCallback(() => {
+    logger.info('Abrindo modal de permissão de localização', {}, 'WeatherWidget');
+    setShowLocationModal(true);
+  }, []);
+
+  const handleAllowLocation = useCallback(async () => {
     try {
+      setShowLocationModal(false);
       setError(null);
-      logger.info('Solicitando permissão de localização', {}, 'WeatherWidget');
+      logger.info('Usuário permitiu localização, solicitando permissão nativa', {}, 'WeatherWidget');
 
       const granted = await weatherService.requestGeolocationPermission();
       setLocationPermission(granted);
@@ -77,13 +85,24 @@ const WeatherWidget: React.FC = () => {
       if (granted) {
         await loadWeatherData(false);
       } else {
-        setError('Permissão de localização necessária para dados precisos');
+        setError('Permissão de localização negada. Use o botão atualizar para tentar novamente.');
       }
     } catch (err: any) {
       logger.error('Falha na solicitação de permissão de localização', { error: err.message }, 'WeatherWidget');
-      setError('Erro ao solicitar permissão de localização');
+      setError('Erro ao acessar localização. Verifique as permissões do navegador.');
     }
   }, [loadWeatherData]);
+
+  const handleDenyLocation = useCallback(() => {
+    logger.info('Usuário negou permissão de localização no modal', {}, 'WeatherWidget');
+    setShowLocationModal(false);
+    setError('Localização necessária para dados climáticos precisos. Use o botão atualizar para tentar novamente.');
+  }, []);
+
+  const handleCloseLocationModal = useCallback(() => {
+    logger.info('Usuário fechou modal de permissão de localização', {}, 'WeatherWidget');
+    setShowLocationModal(false);
+  }, []);
 
   useEffect(() => {
     loadWeatherData();
@@ -180,6 +199,13 @@ const WeatherWidget: React.FC = () => {
           </p>
         </div>
       )}
+
+      <ModalLocationPermission
+        isOpen={showLocationModal}
+        onAllow={handleAllowLocation}
+        onDeny={handleDenyLocation}
+        onClose={handleCloseLocationModal}
+      />
     </GlassCard>
   );
 };
