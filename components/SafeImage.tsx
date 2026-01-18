@@ -20,6 +20,13 @@ const SafeImage: React.FC<SafeImageProps> = ({
   const [hasError, setHasError] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
 
+  // Update currentSrc when src prop changes
+  React.useEffect(() => {
+    setCurrentSrc(src);
+    setHasError(false);
+    setIsLoading(true);
+  }, [src]);
+
   const handleError = useCallback(() => {
     logger.warn('Image failed to load, trying fallback', { src: currentSrc, hasFallback: !!fallbackSrc }, 'SafeImage');
     setHasError(true);

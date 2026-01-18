@@ -21,7 +21,8 @@ const EventsWidget: React.FC = () => {
                 {/* Teaser Area */}
                 <div className="relative h-24 w-full rounded-xl overflow-hidden border border-white/5 mb-3">
                     <SafeImage
-                        src="/next_event_teaser_1768724552312.png"
+                        src="/event_teaser_2026.png"
+                        fallbackSrc="/next_event_teaser_1768724552312.png"
                         alt="Evento em Breve"
                         className="w-full h-full object-cover"
                     />
