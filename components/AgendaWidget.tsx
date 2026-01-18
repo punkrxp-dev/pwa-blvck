@@ -18,28 +18,28 @@ const programs: ProgramItem[] = [
     title: 'Club.',
     subtitle: 'HYROX',
     detail: 'Precision endurance for race day readiness',
-    videoUrl: 'https://res.cloudinary.com/de5jsf8pj/video/upload/v1768730141/hyrox_ebkdrr.mp4'
+    videoUrl: '/api/video?video=v1768730141/hyrox_ebkdrr.mp4'
   },
   {
     id: '2',
     title: '// TRAINING',
     subtitle: 'PERFORMANCE',
     detail: 'Strength + tempo work guided by coaches',
-    videoUrl: 'https://res.cloudinary.com/de5jsf8pj/video/upload/v1768729543/A_convite_da_vivi_uma_experie%CC%82ncia_premium_ahlpl5.mp4'
+    videoUrl: '/api/video?video=v1768729543/A_convite_da_vivi_uma_experie%CC%82ncia_premium_ahlpl5.mp4'
   },
   {
     id: '3',
     title: '[ZONE]',
     subtitle: 'KMAKER',
     detail: 'Explosive power and metabolic conditioning',
-    videoUrl: 'https://res.cloudinary.com/de5jsf8pj/video/upload/v1768729715/zone_o2orh4.mp4'
+    videoUrl: '/api/video?video=v1768729715/zone_o2orh4.mp4'
   },
   {
     id: '4',
     title: '.YOGA',
     subtitle: 'MOBILITY',
     detail: 'Calm recovery to balance high-intensity work',
-    videoUrl: 'https://res.cloudinary.com/de5jsf8pj/video/upload/v1768729387/yoga.mp4'
+    videoUrl: '/api/video?video=v1768729387/yoga.mp4'
   },
 ];
 
