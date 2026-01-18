@@ -19,8 +19,8 @@ const ScheduleModal: React.FC<ScheduleModalProps> = ({ isOpen, onClose }) => {
           hours: '05:00 às 22:00'
         },
         {
-          days: 'Sábado e Feriados',
-          hours: '07:00 às 14:00'
+          days: 'Sábado',
+          hours: '07:00 às 12:00'
         }
       ]
     },

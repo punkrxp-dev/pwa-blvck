@@ -58,9 +58,10 @@ export const useServiceWorker = () => {
             logger.info('Service Worker installing...', {}, 'useServiceWorker');
 
             installing.addEventListener('statechange', (event) => {
-              logger.info(`SW state changed: ${event.target.state}`, {}, 'useServiceWorker');
+              const sw = event.target as ServiceWorker;
+              logger.info(`SW state changed: ${sw.state}`, {}, 'useServiceWorker');
 
-              if (event.target.state === 'installed') {
+              if (sw.state === 'installed') {
                 if (navigator.serviceWorker.controller) {
                   // Nova versão disponível
                   setState(prev => ({ ...prev, updateAvailable: true }));

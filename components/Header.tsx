@@ -27,11 +27,19 @@ const Header: React.FC = () => {
 
   const checkStatus = useCallback(() => {
     const now = new Date();
+    const day = now.getDay(); // 0 = Sunday, 6 = Saturday
     const currentMinutes = now.getHours() * 60 + now.getMinutes();
-    const openTime = 6 * 60 + 30; // 06:30
-    const closeTime = 22 * 60;    // 22:00 (10:00 PM)
 
-    setIsOpen(currentMinutes >= openTime && currentMinutes < closeTime);
+    let openTime = 5 * 60; // 05:00 (Seg-Sex)
+    let closeTime = 22 * 60;    // 22:00 (Seg-Sex)
+
+    if (day === 6) { // Sábado
+      openTime = 7 * 60; // 07:00
+      closeTime = 12 * 60; // 12:00
+    }
+
+    const openToday = day !== 0; // Fechado aos domingos
+    setIsOpen(openToday && currentMinutes >= openTime && currentMinutes < closeTime);
     setCurrentTime(now);
   }, []);
 
@@ -71,22 +79,38 @@ const Header: React.FC = () => {
 
   // Dynamic status message based on time
   const statusMessage = React.useMemo(() => {
+    const day = currentTime.getDay();
+    if (day === 0) return 'BOM DOMINGO // TE AGUARDAMOS AMANHÃ';
+
     if (isOpen) return 'ESTAMOS ABERTOS';
+
+    // Sábado após fechar
+    if (day === 6 && timeValue >= 12 * 60) {
+      return 'BOM SÁBADO // ATÉ SEGUNDA';
+    }
+
+    // Lógica Quase Aberto (1h antes)
+    const openToday = day === 6 ? 7 * 60 : 5 * 60;
+    if (timeValue >= openToday - 60 && timeValue < openToday) {
+      return 'BOM DIA // ESTAMOS QUASE ABERTOS';
+    }
 
     if (timeValue >= 22 * 60 || timeValue < 0) {
       return 'BOA NOITE // TE AGUARDAMOS AMANHÃ';
     }
-    if (timeValue >= 0 && timeValue < 4 * 60 + 30) {
+    if (timeValue >= 0 && timeValue < 4 * 60) {
       return 'BOA MADRUGADA // E DESCANSO';
     }
-    if (timeValue >= 4 * 60 + 30 && timeValue < 6 * 60 + 30) {
-      return 'BOM DIA // ESTAMOS QUASE ABERTOS';
-    }
     return 'ESTAMOS FECHADOS';
-  }, [isOpen, timeValue]);
+  }, [isOpen, timeValue, currentTime]);
 
-  // State for "Almost Open"
-  const isAlmostOpen = timeValue >= 4 * 60 + 30 && timeValue < 6 * 60 + 30;
+  // State for "Almost Open" - Only on opening days (1h before)
+  const isAlmostOpen = React.useMemo(() => {
+    const day = currentTime.getDay();
+    if (day === 0) return false;
+    const openTime = day === 6 ? 7 * 60 : 5 * 60;
+    return timeValue >= openTime - 60 && timeValue < openTime;
+  }, [timeValue, currentTime]);
 
   return (
     <header className="sticky top-0 z-50 w-full pt-4 pb-2 px-4 bg-transparent">

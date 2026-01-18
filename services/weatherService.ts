@@ -110,13 +110,13 @@ class WeatherService {
 
           let errorMessage = 'Erro ao obter localização';
           switch (error.code) {
-            case error.PERMISSION_DENIED:
+            case 1: // PERMISSION_DENIED
               errorMessage = 'Permissão de localização negada pelo usuário';
               break;
-            case error.POSITION_UNAVAILABLE:
+            case 2: // POSITION_UNAVAILABLE
               errorMessage = 'Localização indisponível';
               break;
-            case error.TIMEOUT:
+            case 3: // TIMEOUT
               errorMessage = 'Timeout ao obter localização';
               break;
           }
