@@ -355,6 +355,37 @@
       animation-duration: 300ms;
     }
 
+    /* Modal Animations */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes scaleIn {
+      from {
+        opacity: 0;
+        transform: scale(0.95);
+      }
+
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    .animate-fadeIn {
+      animation: fadeIn 0.2s ease-out;
+    }
+
+    .animate-scaleIn {
+      animation: scaleIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
     /* Reduzir motion para usuários que preferem */
     @media (prefers-reduced-motion: reduce) {
       :focus-visible {
@@ -371,6 +402,11 @@
       }
 
       .animate-in {
+        animation: none;
+      }
+
+      .animate-fadeIn,
+      .animate-scaleIn {
         animation: none;
       }
     }
