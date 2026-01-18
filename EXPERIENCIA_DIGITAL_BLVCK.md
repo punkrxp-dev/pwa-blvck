@@ -47,3 +47,11 @@ Não é necessário procurar em lojas agora:
 ---
 
 **PUNK | BLVCK // PRESENCE IS THE NEW POWER**
+
+
+## Contact
+Desenvolvido por: 
+MELLØ // NEØFLW 
+Marketing na Blockchain, Soluções em Sistemas e Web3
+
+[neo@neoprotocol.space](mailto:neo@neoprotocol.space)
