@@ -23,15 +23,21 @@ const Footer: React.FC = () => {
           </p>
         </div>
 
-        <div className="flex flex-col items-center gap-2">
-          <div className="flex items-center gap-2 text-[10px] font-bold punk-steel-text uppercase tracking-widest">
-            <MapPin size={12} className="text-[#FF5F1F]" />
-            Shopping Plaza D’oro, Jardim Eldorado — Goiânia
-          </div>
-        </div>
-
-        <div className="pt-8 opacity-20">
-          <p className="text-[9px] font-bold uppercase tracking-[0.4em]">© {currentYear} PUNK | BLVCK</p>
+        <div className="flex flex-col items-center gap-3">
+          <a
+            href="https://www.google.com/maps/place/PUNK+BLVCK/@-16.7080078,-49.3284884,17z/data=!3m1!4b1!4m6!3m5!1s0x935ef7b2cd4039e9:0x8e5d1e5babe1aacc!8m2!3d-16.7080078!4d-49.3284884!16s%2Fg%2F11zkh43n9h?entry=ttu&g_ep=EgoyMDI2MDExMy4wIKXMDSoKLDEwMDc5MjA3MUgBUAM%3D"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 text-[10px] font-bold text-[var(--text-secondary)] hover:text-[#FF5F1F] uppercase tracking-widest transition-colors group"
+          >
+            <MapPin size={12} className="text-[#FF5F1F] group-hover:scale-110 transition-transform" />
+            <span>Shopping Plaza D'oro, Jardim Eldorado — Goiânia</span>
+            <ExternalLink size={10} className="opacity-50 group-hover:opacity-100 transition-opacity" />
+          </a>
+          
+          <p className="text-[9px] font-bold uppercase tracking-[0.4em] opacity-30 text-[var(--text-secondary)]">
+            © {currentYear} PUNK | BLVCK
+          </p>
         </div>
       </div>
     </footer>
