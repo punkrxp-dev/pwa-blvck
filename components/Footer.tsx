@@ -26,7 +26,7 @@ const Footer: React.FC = () => {
         <div className="flex flex-col items-center gap-2">
           <div className="flex items-center gap-2 text-[10px] font-bold punk-steel-text uppercase tracking-widest">
             <MapPin size={12} className="text-[#FF5F1F]" />
-            Shopping Plaza D’oro — Goiânia
+            Shopping Plaza D’oro, Jardim Eldorado — Goiânia
           </div>
         </div>
 

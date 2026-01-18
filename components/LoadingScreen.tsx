@@ -72,7 +72,7 @@ const LoadingScreen: React.FC = () => {
         {/* Loading Message */}
         <div className="mt-6 text-center">
           <p className="text-xs text-[var(--text-muted)] uppercase tracking-widest animate-pulse">
-            Carregando experiência sofisticada...
+            CARREGANDO EXPERIÊNCIA BLVCK...
           </p>
         </div>
       </div>
