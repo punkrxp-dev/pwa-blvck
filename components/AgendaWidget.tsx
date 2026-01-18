@@ -10,10 +10,10 @@ interface ProgramItem {
 }
 
 const programs: ProgramItem[] = [
-  { id: '1', title: 'Club.', subtitle: 'HYROX' },
-  { id: '2', title: '// TRAINING', subtitle: 'PERFORMANCE' },
-  { id: '3', title: '[ZONE]', subtitle: 'KMAKER' },
-  { id: '4', title: '.YOGA', subtitle: 'MOBILITY' },
+  { id: '1', title: 'Club.', subtitle: 'HYROX', detail: 'Precision endurance for race day readiness' },
+  { id: '2', title: '// TRAINING', subtitle: 'PERFORMANCE', detail: 'Strength + tempo work guided by coaches' },
+  { id: '3', title: '[ZONE]', subtitle: 'KMAKER', detail: 'Explosive power and metabolic conditioning' },
+  { id: '4', title: '.YOGA', subtitle: 'MOBILITY', detail: 'Calm recovery to balance high-intensity work' },
 ];
 
 const AgendaWidget: React.FC = () => {
@@ -41,7 +41,7 @@ const AgendaWidget: React.FC = () => {
         <div className="w-1.5 h-1.5 rounded-full bg-[#FF5F1F] animate-pulse shadow-[0_0_8px_rgba(255,95,31,0.6)]" />
       </div>
 
-      <div className="grid grid-cols-2 gap-3 flex-grow">
+      <div className="flex flex-col gap-4 flex-grow">
         {isLoading ? (
           // Skeleton loaders para os programas
           Array.from({ length: 4 }).map((_, index) => (
@@ -57,15 +57,18 @@ const AgendaWidget: React.FC = () => {
           ))
         ) : (
           programs.map((prog) => (
-            <div key={prog.id} className="group cursor-pointer">
-              <div className="flex items-center justify-between p-4 rounded-[1.8rem] bg-[var(--glass-bg-light)] border border-[var(--glass-border-light)] transition-all duration-300 ease-out group-hover:bg-[#FF5F1F]/10 group-hover:border-[#FF5F1F]/20 group-hover:scale-[1.02] group-hover:shadow-[0_8px_20px_-10px_rgba(255,95,31,0.2)] group-active:scale-[0.98]">
-                 <div className="flex flex-col">
-                    <h4 className="text-sm font-black tracking-tight leading-none uppercase italic transition-colors group-hover:text-[var(--text-primary)]">{prog.title}</h4>
-                    <p className="text-[11px] font-thin tracking-[0.2em] uppercase text-[var(--text-secondary)] leading-tight mt-1.5 group-hover:text-[var(--text-primary)]/70">{prog.subtitle}</p>
+          <div key={prog.id} className="group cursor-pointer">
+            <div className="flex flex-col gap-3 p-5 rounded-[2rem] bg-[var(--glass-bg-light)] border border-[var(--glass-border-light)] transition-all duration-300 ease-out group-hover:bg-[#FF5F1F]/10 group-hover:border-[#FF5F1F]/20 group-hover:shadow-[0_8px_20px_-10px_rgba(255,95,31,0.2)] group-active:scale-[0.98]">
+               <div className="flex items-start justify-between">
+                 <div className="flex flex-col gap-1">
+                   <h4 className="text-lg font-black uppercase italic text-white">{prog.title}</h4>
+                   <p className="text-[10px] font-bold tracking-[0.3em] uppercase text-[#FF5F1F]/90">{prog.subtitle}</p>
                  </div>
-                 <ChevronRight size={14} className="text-[var(--text-muted)] shrink-0 transition-all group-hover:text-[#FF5F1F] group-hover:translate-x-1" />
-              </div>
+                 <ChevronRight size={18} className="text-white/80 transition-all group-hover:text-white group-hover:translate-x-1" />
+               </div>
+               <p className="text-[11px] uppercase tracking-[0.25em] text-[var(--text-muted)] leading-tight">{prog.detail}</p>
             </div>
+          </div>
           ))
         )}
       </div>
