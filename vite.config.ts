@@ -78,7 +78,30 @@ export default defineConfig(({ mode }) => {
               purpose: 'any maskable'
             }
           ],
-          categories: ['fitness', 'health', 'sports', 'lifestyle']
+          categories: ['fitness', 'health', 'sports', 'lifestyle'],
+          shortcuts: [
+            {
+              name: 'Iniciar Cronômetro',
+              short_name: 'Timer',
+              description: 'Abre o cronômetro para iniciar seu treino',
+              url: '/?shortcut=timer',
+              icons: [{ src: 'icons/icon-192x192.png', sizes: '192x192' }]
+            },
+            {
+              name: 'Ver Agenda',
+              short_name: 'Agenda',
+              description: 'Ver a programação diária de treinos',
+              url: '/?shortcut=agenda',
+              icons: [{ src: 'icons/icon-192x192.png', sizes: '192x192' }]
+            },
+            {
+              name: 'Check-in (QR Code)',
+              short_name: 'Check-in',
+              description: 'Acesso rápido para check-in na unidade',
+              url: '/?shortcut=checkin',
+              icons: [{ src: 'icons/icon-192x192.png', sizes: '192x192' }]
+            }
+          ]
         }
       })
     ],

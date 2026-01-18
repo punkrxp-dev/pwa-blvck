@@ -9,20 +9,47 @@ import CommunityInstagramWidget from './CommunityInstagramWidget';
 import { ArrowUpRight } from 'lucide-react';
 import { useTheme } from '../contexts/ThemeContext';
 
+import { useGyroscope } from '../hooks/useGyroscope';
+
 const BentoGrid: React.FC = () => {
   const { actualTheme } = useTheme();
+  const gyroscope = useGyroscope(1.5);
+  const [mouseOffset, setMouseOffset] = React.useState({ x: 0, y: 0 });
+
   const logoUrl = actualTheme === 'light'
     ? "https://res.cloudinary.com/de5jsf8pj/image/upload/v1768721836/blvck_logo_black_jiqz2f.png"
     : "https://res.cloudinary.com/de5jsf8pj/image/upload/v1768721836/blvck_logo_white_h4m0dn.png";
 
+  const handleMouseMove = (e: React.MouseEvent) => {
+    const { clientX, clientY } = e;
+    const x = (clientX / window.innerWidth - 0.5) * 20;
+    const y = (clientY / window.innerHeight - 0.5) * 20;
+    setMouseOffset({ x, y });
+  };
+
+  // Combinar offset do giroscópio e do mouse (giroscópio tem prioridade em mobile)
+  const xOffset = gyroscope.x !== 0 ? gyroscope.x : mouseOffset.x;
+  const yOffset = gyroscope.y !== 0 ? gyroscope.y : mouseOffset.y;
+
   return (
-    <div className="grid grid-cols-2 auto-rows-[180px] gap-5 pb-16 grid-flow-dense">
-      <div className="col-span-2 flex flex-col items-center justify-center py-6 px-4">
-        <img
-          src={logoUrl}
-          alt="PUNK | BLVCK"
-          className="h-20 w-auto object-contain mb-8 opacity-95"
-        />
+    <div
+      className="grid grid-cols-2 auto-rows-[180px] gap-5 pb-16 grid-flow-dense"
+      onMouseMove={handleMouseMove}
+      onMouseLeave={() => setMouseOffset({ x: 0, y: 0 })}
+    >
+      <div className="col-span-2 flex flex-col items-center justify-center py-6 px-4 perspective-1000">
+        <div
+          className="transition-transform duration-200 ease-out will-change-transform"
+          style={{
+            transform: `translate3d(${xOffset}px, ${yOffset}px, 0) rotateX(${-yOffset * 0.5}deg) rotateY(${xOffset * 0.5}deg)`
+          }}
+        >
+          <img
+            src={logoUrl}
+            alt="PUNK | BLVCK"
+            className="h-20 w-auto object-contain mb-8 opacity-95 filter drop-shadow-[0_10px_20px_rgba(0,0,0,0.3)]"
+          />
+        </div>
         <h2 className="text-[12px] font-medium text-center leading-relaxed uppercase text-white/40">
           ONDE PERFORMANCE,<br />
           <span className="text-punk-gold/60">ENCONTRA EXCLUSIVIDADE.</span>
@@ -33,7 +60,9 @@ const BentoGrid: React.FC = () => {
       </ErrorBoundary>
 
       <ErrorBoundary>
-        <TimerWidget />
+        <div id="timer-widget">
+          <TimerWidget />
+        </div>
       </ErrorBoundary>
 
       <ErrorBoundary>
@@ -63,7 +92,9 @@ const BentoGrid: React.FC = () => {
       </ErrorBoundary>
 
       <ErrorBoundary>
-        <AgendaWidget />
+        <div id="agenda-widget">
+          <AgendaWidget />
+        </div>
       </ErrorBoundary>
 
       <ErrorBoundary>

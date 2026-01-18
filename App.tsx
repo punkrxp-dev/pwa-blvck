@@ -23,10 +23,31 @@ const AppContent: React.FC = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 2500); // 2.5 segundos para uma boa experiência
+    }, 2500);
 
     return () => clearTimeout(timer);
   }, []);
+
+  // Estado para os atalhos
+  const [openCheckIn, setOpenCheckIn] = useState(false);
+
+  // Lógica de Shortcuts
+  useEffect(() => {
+    if (!isLoading) {
+      const params = new URLSearchParams(window.location.search);
+      const shortcut = params.get('shortcut');
+
+      if (shortcut === 'checkin') {
+        setOpenCheckIn(true);
+      } else if (shortcut === 'timer') {
+        const timerEl = document.getElementById('timer-widget');
+        timerEl?.scrollIntoView({ behavior: 'smooth' });
+      } else if (shortcut === 'agenda') {
+        const agendaEl = document.getElementById('agenda-widget');
+        agendaEl?.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  }, [isLoading]);
 
   // Mostrar loading screen enquanto carrega
   if (isLoading) {
@@ -63,7 +84,7 @@ const AppContent: React.FC = () => {
 
       <Footer />
       <PWAInstallPrompt />
-      <BottomNav />
+      <BottomNav openCheckInOnLoad={openCheckIn} />
     </div>
   );
 };
