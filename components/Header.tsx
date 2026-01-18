@@ -80,6 +80,8 @@ const Header: React.FC = () => {
   // Dynamic status message based on time
   const statusMessage = React.useMemo(() => {
     const day = currentTime.getDay();
+
+    // Domingo: sempre fechado
     if (day === 0) return 'BOM DOMINGO // TE AGUARDAMOS AMANHÃ';
 
     if (isOpen) return 'ESTAMOS ABERTOS';
@@ -89,9 +91,9 @@ const Header: React.FC = () => {
       return 'BOM SÁBADO // ATÉ SEGUNDA';
     }
 
-    // Lógica Quase Aberto (1h antes)
-    const openToday = day === 6 ? 7 * 60 : 5 * 60;
-    if (timeValue >= openToday - 60 && timeValue < openToday) {
+    // Lógica Quase Aberto (1h antes) - apenas dias úteis e sábado
+    const openTime = day === 6 ? 7 * 60 : 5 * 60;
+    if (timeValue >= openTime - 60 && timeValue < openTime) {
       return 'BOM DIA // ESTAMOS QUASE ABERTOS';
     }
 
