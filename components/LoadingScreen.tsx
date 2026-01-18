@@ -35,7 +35,7 @@ const LoadingScreen: React.FC = () => {
       {/* Loading Content */}
       <div className="relative z-10 flex flex-col items-center text-center px-4">
         {/* Logo */}
-        <div className="mb-8">
+        <div className="mb-12">
           <img
             src={actualTheme === 'light'
               ? "https://res.cloudinary.com/de5jsf8pj/image/upload/v1768703963/web-app-manifest-512x512_W_eirnmc.png"
@@ -46,18 +46,9 @@ const LoadingScreen: React.FC = () => {
           />
         </div>
 
-        {/* Loading Text */}
-        <div className="mb-6">
-          <h1 className="text-2xl font-black text-[#FF5F1F] uppercase tracking-wider mb-2">
-            PUNK | BLVCK
-          </h1>
-          <p className="text-sm text-[var(--text-secondary)] uppercase tracking-widest">
-            PRESENCE IS THE NEW POWER
-          </p>
-        </div>
 
         {/* Loading Animation */}
-        <div className="relative">
+        <div className="relative mt-8">
           {/* Outer Ring */}
           <div className="w-16 h-16 border-4 border-[#FF5F1F]/20 rounded-full animate-spin">
             {/* Inner Ring */}
@@ -70,7 +61,7 @@ const LoadingScreen: React.FC = () => {
         </div>
 
         {/* Loading Message */}
-        <div className="mt-6 text-center">
+        <div className="mt-8 text-center">
           <p className="text-xs text-[var(--text-muted)] uppercase tracking-widest animate-pulse">
             CARREGANDO EXPERIÊNCIA BLVCK...
           </p>
