@@ -1,4 +1,5 @@
-import React, { Component, ErrorInfo, ReactNode } from 'react';
+import * as React from 'react';
+import { ErrorInfo, ReactNode } from 'react';
 import GlassCard from './GlassCard';
 import { AlertTriangle, RefreshCw, Home } from 'lucide-react';
 import logger from '../utils/logger';
@@ -15,7 +16,7 @@ interface State {
   errorInfo?: ErrorInfo;
 }
 
-class ErrorBoundary extends Component<Props, State> {
+class ErrorBoundary extends React.Component<Props, State> {
   constructor(props: Props) {
     super(props);
     this.state = { hasError: false };
@@ -86,7 +87,7 @@ class ErrorBoundary extends Component<Props, State> {
               <div className="flex gap-3 w-full">
                 <button
                   onClick={this.handleRetry}
-                  className="flex-1 flex items-center justify-center gap-2 px-4 py-3 bg-[#FF5F1F] text-white rounded-xl font-bold uppercase text-xs tracking-widest hover:bg-[#FF5F1F]/90 transition-colors active:scale-95"
+                  className="flex-1 flex items-center justify-center gap-2 px-4 py-3 bg-punk-gold text-punk-black rounded-xl font-bold uppercase text-xs tracking-widest hover:bg-punk-gold/90 transition-colors active:scale-95"
                 >
                   <RefreshCw size={14} />
                   Tentar Novamente

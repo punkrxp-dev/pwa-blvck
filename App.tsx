@@ -34,25 +34,27 @@ const AppContent: React.FC = () => {
   }
 
   return (
-    <div className="min-h-screen flex flex-col bg-[var(--bg-primary)] selection:bg-[#FF5F1F]/30 theme-transition">
-      {/* Background Layers - só mostrar no tema escuro */}
-      {actualTheme === 'dark' && (
-        <div className="fixed inset-0 pointer-events-none z-0">
-          {/* The Base Image Background */}
-          <div
-            className="absolute inset-0 bg-cover bg-center opacity-100 bg-punk-background"
-            role="img"
-            aria-label="PUNK BLVCK background"
-          />
+    <div className="min-h-screen flex flex-col bg-[var(--bg-primary)] selection:bg-punk-gold/30 theme-transition">
+      {/* Background Layers */}
+      <div className="fixed inset-0 pointer-events-none z-0">
+        {/* The Base Image Background */}
+        <div
+          className={`absolute inset-0 bg-cover bg-center transition-opacity duration-700 bg-punk-background grayscale contrast-125 ${actualTheme === 'dark' ? 'opacity-50' : 'opacity-10'}`}
+          role="img"
+          aria-label="PUNK BLVCK background"
+        />
 
-          {/* Gradient Overlay for contrast - softened slightly to show more of the 'real' background */}
+        {/* Gradient Overlay for contrast */}
+        {actualTheme === 'dark' ? (
           <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/20 to-black/80" />
+        ) : (
+          <div className="absolute inset-0 bg-gradient-to-b from-white/90 via-white/40 to-white/95" />
+        )}
 
-          {/* Dynamic Glows to help glassmorphism "acqua" feel */}
-          <div className="absolute top-[-10%] left-[-10%] w-[60%] h-[60%] bg-[#FF5F1F]/10 blur-[150px] rounded-full animate-pulse" />
-          <div className="absolute bottom-[20%] right-[-10%] w-[40%] h-[40%] bg-white/5 blur-[120px] rounded-full" />
-        </div>
-      )}
+        {/* Dynamic Glows */}
+        <div className={`absolute top-[-10%] left-[-10%] w-[60%] h-[60%] blur-[150px] rounded-full animate-pulse ${actualTheme === 'dark' ? 'bg-punk-gold/10' : 'bg-punk-gold/5'}`} />
+        <div className={`absolute bottom-[20%] right-[-10%] w-[40%] h-[40%] blur-[120px] rounded-full ${actualTheme === 'dark' ? 'bg-punk-white/5' : 'bg-punk-black/5'}`} />
+      </div>
 
       <main className="relative z-10 flex-grow px-4 py-8 max-w-lg mx-auto w-full">
         <Header />

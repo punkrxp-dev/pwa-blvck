@@ -36,7 +36,7 @@ const BottomNav: React.FC = () => {
   ];
 
   return (
-    <nav 
+    <nav
       className="fixed bottom-0 left-0 right-0 z-50 pb-safe"
       aria-label="Menu de navegação principal"
     >
@@ -45,25 +45,25 @@ const BottomNav: React.FC = () => {
           {navigationItems.map((item) => {
             const Icon = item.icon;
             const isButton = 'onClick' in item;
-            
+
             const content = (
               <>
                 <div className="relative">
-                  <Icon 
-                    size={22} 
-                    className="text-[var(--text-secondary)] group-hover:text-[#FF5F1F] group-active:text-[#FF5F1F] transition-colors" 
+                  <Icon
+                    size={22}
+                    className="text-[var(--text-secondary)] group-hover:text-punk-gold group-active:text-punk-gold transition-colors"
                     strokeWidth={2.5}
                   />
                   {/* Ping effect on active */}
-                  <span className="absolute inset-0 rounded-full bg-[#FF5F1F]/20 opacity-0 group-active:opacity-100 group-active:animate-ping" />
+                  <span className="absolute inset-0 rounded-full bg-punk-gold/20 opacity-0 group-active:opacity-100 group-active:animate-ping" />
                 </div>
-                <span className="text-[9px] font-bold uppercase tracking-wider text-[var(--text-secondary)] group-hover:text-[#FF5F1F] group-active:text-[#FF5F1F] transition-colors leading-tight text-center">
+                <span className="text-[9px] font-bold uppercase tracking-wider text-[var(--text-secondary)] group-hover:text-punk-gold group-active:text-punk-gold transition-colors leading-tight text-center">
                   {item.label}
                 </span>
               </>
             );
 
-            const className = "flex flex-col items-center justify-center gap-2 py-3 px-2 rounded-2xl transition-all duration-300 hover:bg-[#FF5F1F]/10 active:scale-95 group";
+            const className = "flex flex-col items-center justify-center gap-2 py-3 px-2 rounded-2xl transition-all duration-300 hover:bg-punk-gold/10 active:scale-95 group";
 
             if (isButton) {
               return (
@@ -94,9 +94,9 @@ const BottomNav: React.FC = () => {
         </div>
       </div>
 
-      <ScheduleModal 
-        isOpen={isScheduleOpen} 
-        onClose={() => setIsScheduleOpen(false)} 
+      <ScheduleModal
+        isOpen={isScheduleOpen}
+        onClose={() => setIsScheduleOpen(false)}
       />
     </nav>
   );

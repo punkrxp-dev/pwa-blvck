@@ -18,9 +18,9 @@ const ThemeToggle: React.FC = () => {
       case 'light':
         return <Sun size={16} className="text-yellow-500" />;
       case 'dark':
-        return <Moon size={16} className="text-blue-400" />;
+        return <Moon size={16} className="text-punk-gold" />;
       default:
-        return <Moon size={16} className="text-blue-400" />;
+        return <Moon size={16} className="text-punk-gold" />;
     }
   };
 

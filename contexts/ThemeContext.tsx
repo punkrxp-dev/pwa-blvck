@@ -45,7 +45,7 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
       // Atualizar meta theme-color
       const metaThemeColor = document.querySelector('meta[name="theme-color"]');
       if (metaThemeColor) {
-        metaThemeColor.setAttribute('content', newActualTheme === 'dark' ? '#000000' : '#FF5F1F');
+        metaThemeColor.setAttribute('content', newActualTheme === 'dark' ? '#000000' : '#FFFFFF');
       }
 
       // Salvar no localStorage (não bloqueia a UI)

@@ -121,74 +121,79 @@ const WeatherWidget: React.FC = () => {
   return (
     <GlassCard span="col-1" className="bg-gradient-to-br from-white/[0.02] to-transparent">
       <div className="flex items-center justify-between text-[var(--text-muted)]">
-        <div className="flex items-center gap-1.5">
-          <MapPin size={10} className="glow-orange text-[#FF5F1F]" />
-          <span className="text-[9px] font-bold tracking-[0.2em] uppercase truncate max-w-[80px]" title={weather?.city || 'Carregando...'}>
-            {weather?.city || 'CARREGANDO...'}
+        <div className="flex items-center gap-1.5 flex-1 min-w-0 mr-2">
+          <MapPin size={14} className="glow-gold text-punk-gold shrink-0" />
+          <span className="text-[9px] font-bold tracking-[0.2em] uppercase truncate" title={weather?.city || 'Carregando...'}>
+            {(weather?.city?.split(',')[0] || 'CARREGANDO...')}
           </span>
         </div>
-        <div className="flex items-center gap-1">
+        <div className="flex items-center gap-1.5">
           {error && (
-            <AlertCircle size={10} className="text-red-400" title={error} />
+            <span title={error}>
+              <AlertCircle size={14} className="text-red-400" />
+            </span>
           )}
           {locationPermission === false && (
             <button
               onClick={handleRequestLocation}
-              className="p-1 hover:text-[#FF5F1F] transition-colors"
+              className="p-1.5 hover:text-punk-gold transition-colors"
               title="Permitir localização"
               aria-label="Permitir acesso à localização"
             >
-              <Navigation size={10} />
+              <Navigation size={14} />
             </button>
           )}
           <button
             onClick={handleRefresh}
             disabled={isRefreshing}
-            className={`p-1 hover:text-[#FF5F1F] transition-colors ${isRefreshing ? 'animate-spin' : ''}`}
+            className={`p-1.5 hover:text-punk-gold transition-colors ${isRefreshing ? 'animate-spin' : ''}`}
             title="Atualizar clima"
             aria-label="Atualizar dados do clima"
           >
-            <RefreshCw size={10} />
+            <RefreshCw size={14} />
           </button>
         </div>
       </div>
 
-      <div className="flex flex-col items-center justify-center flex-grow py-2">
+      <div className="flex flex-col items-center justify-center flex-grow py-1">
         {isLoading && !weather ? (
-          <div className="flex flex-col items-center space-y-3">
-            <SkeletonLoader className="h-12 w-16" />
-            <SkeletonLoader className="h-3 w-12" />
+          <div className="flex flex-col items-center space-y-2">
+            <SkeletonLoader className="h-10 w-14" />
+            <SkeletonLoader className="h-2 w-10" />
           </div>
         ) : (
-          <>
+          <div className="flex flex-col items-center">
             <div className="relative">
-              <h2 className="text-5xl font-black tracking-tighter leading-none italic">
-                {weather?.temp ?? '--'}<span className="text-2xl align-top font-light ml-0.5">°</span>
+              <h2 className="text-4xl font-black tracking-tighter leading-none italic">
+                {weather?.temp ?? '--'}<span className="text-xl align-top font-light ml-0.5">°</span>
               </h2>
               {isRefreshing && (
                 <div className="absolute -top-1 -right-1">
-                  <RefreshCw size={12} className="animate-spin text-[#FF5F1F]" />
+                  <RefreshCw size={12} className="animate-spin text-punk-gold" />
                 </div>
               )}
             </div>
-            <span className="text-[10px] font-black text-[#FF5F1F] uppercase tracking-[0.25em] mt-2 opacity-80">
+            <span className="text-[9px] font-black text-punk-gold uppercase tracking-[0.2em] mt-1.5 opacity-80">
               {weather?.condition ?? '---'}
             </span>
-          </>
+          </div>
         )}
       </div>
 
-      <div className="flex items-center justify-between pt-3 border-t border-white/5 mt-auto">
-        <Sun size={16} className="text-[var(--text-muted)]" strokeWidth={1.5} />
-        <div className="flex gap-3">
-           <div className="flex flex-col items-end">
-             <span className="text-[7px] font-bold opacity-20 uppercase">UMID.</span>
-             <span className="text-[10px] font-black tabular-nums">{weather?.humidity ?? '0'}%</span>
-           </div>
-           <div className="flex flex-col items-end">
-             <span className="text-[7px] font-bold opacity-20 uppercase">VENTO</span>
-             <span className="text-[10px] font-black tabular-nums">{weather?.windSpeed ?? '0'}km</span>
-           </div>
+      <div className="flex items-center justify-between pt-2 border-t border-[var(--border-color)] mt-auto bg-black/5 -mx-4 px-4 py-1.5">
+        <div className="flex items-center gap-1.5 opacity-60">
+          <Sun size={14} className="text-punk-gold" />
+          <span className="text-[10px] font-bold uppercase tracking-wider">{weather?.condition ?? 'CLEAN'}</span>
+        </div>
+        <div className="flex gap-4">
+          <div className="flex items-center gap-1">
+            <div className="w-1 h-1 rounded-full bg-blue-400 opacity-60" />
+            <span className="text-[12px] font-black tabular-nums">{weather?.humidity ?? '0'}%</span>
+          </div>
+          <div className="flex items-center gap-1">
+            <Navigation size={10} className="text-punk-steel rotate-45" />
+            <span className="text-[12px] font-black tabular-nums">{weather?.windSpeed ?? '0'}km</span>
+          </div>
         </div>
       </div>
 

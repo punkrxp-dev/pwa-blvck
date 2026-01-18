@@ -105,11 +105,11 @@ const PWAInstallPrompt: React.FC = () => {
 
   return (
     <div className="fixed bottom-4 left-4 right-4 z-50 md:left-auto md:right-4 md:w-96">
-      <div className="glass-noise rounded-2xl p-4 shadow-2xl border border-[#FF5F1F]/20">
+      <div className="glass-noise rounded-2xl p-4 shadow-2xl border border-punk-gold/20">
         <div className="flex items-start gap-3">
           <div className="flex-shrink-0">
-            <div className="w-10 h-10 rounded-full bg-[#FF5F1F]/10 flex items-center justify-center">
-              <Smartphone size={20} className="text-[#FF5F1F]" />
+            <div className="w-10 h-10 rounded-full bg-punk-gold/10 flex items-center justify-center">
+              <Smartphone size={20} className="text-punk-gold" />
             </div>
           </div>
 
@@ -125,7 +125,7 @@ const PWAInstallPrompt: React.FC = () => {
           <div className="flex items-center gap-2 flex-shrink-0">
             <button
               onClick={handleInstall}
-              className="px-4 py-2 bg-[#FF5F1F] text-white text-xs font-bold rounded-full hover:bg-[#FF5F1F]/90 transition-colors"
+              className="px-4 py-2 bg-punk-gold text-punk-black text-xs font-bold rounded-full hover:bg-punk-gold/90 transition-colors"
             >
               <Download size={14} className="inline mr-1" />
               Instalar

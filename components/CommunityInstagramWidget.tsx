@@ -103,11 +103,10 @@ const CommunityInstagramWidget: React.FC = () => {
           {instagramPosts.map((post, index) => (
             <div
               key={post.id}
-              className={`absolute inset-0 transition-all duration-1000 ease-in-out ${
-                index === currentPostIndex
-                  ? 'opacity-100 scale-100'
-                  : 'opacity-0 scale-105'
-              }`}
+              className={`absolute inset-0 transition-all duration-1000 ease-in-out ${index === currentPostIndex
+                ? 'opacity-100 scale-100'
+                : 'opacity-0 scale-105'
+                }`}
             >
               <img
                 src={post.imageUrl}
@@ -158,11 +157,10 @@ const CommunityInstagramWidget: React.FC = () => {
               e.stopPropagation();
               goToPost(index);
             }}
-            className={`w-2 h-2 rounded-full transition-all duration-300 ${
-              index === currentPostIndex
-                ? 'bg-[#FF5F1F] scale-125 shadow-lg'
-                : 'bg-[var(--glass-bg-light)] hover:bg-[var(--bg-primary)]/70'
-            }`}
+            className={`w-2 h-2 rounded-full transition-all duration-300 ${index === currentPostIndex
+              ? 'bg-punk-gold scale-125 shadow-lg'
+              : 'bg-[var(--glass-bg-light)] hover:bg-[var(--bg-primary)]/70'
+              }`}
             aria-label={`Ir para post ${index + 1}`}
           />
         ))}
@@ -177,7 +175,7 @@ const CommunityInstagramWidget: React.FC = () => {
             <Instagram size={14} className={overlayTextClass} />
             <span className={`text-xs font-bold ${overlayTextClass}`}>@PUNK.BLVCK</span>
           </div>
-          
+
           {/* Estatísticas do post */}
           <div className="flex items-center gap-3 bg-[var(--bg-secondary)]/80 backdrop-blur-md rounded-full px-3 py-1.5 shadow-lg">
             <div className="flex items-center gap-1">
@@ -223,9 +221,9 @@ const CommunityInstagramWidget: React.FC = () => {
 
         {/* Call to action */}
         <div className="absolute bottom-6 right-6 opacity-0 group-hover:opacity-100 transition-all duration-300">
-          <div className="flex items-center gap-2 bg-[#FF5F1F] backdrop-blur-md rounded-full px-4 py-2 shadow-xl hover:scale-105 transition-transform">
-            <Share size={14} className="text-white" />
-            <span className="text-xs font-bold text-white uppercase tracking-wide">Follow</span>
+          <div className="flex items-center gap-2 bg-punk-gold backdrop-blur-md rounded-full px-4 py-2 shadow-xl hover:scale-105 transition-transform">
+            <Share size={14} className="text-punk-black" />
+            <span className="text-xs font-bold text-punk-black uppercase tracking-wide">Follow</span>
           </div>
         </div>
       </div>

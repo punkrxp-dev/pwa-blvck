@@ -53,12 +53,12 @@ const ScheduleModal: React.FC<ScheduleModalProps> = ({ isOpen, onClose }) => {
   return (
     <>
       {/* Backdrop */}
-      <div 
+      <div
         className="fixed inset-0 bg-black/60 backdrop-blur-sm z-[60] animate-in fade-in duration-300"
         onClick={onClose}
         aria-hidden="true"
       />
-      
+
       {/* Modal */}
       <div className="fixed inset-x-0 bottom-0 z-[70] animate-in slide-in-from-bottom duration-300">
         <div className="max-w-md mx-auto px-4 pb-4">
@@ -67,8 +67,8 @@ const ScheduleModal: React.FC<ScheduleModalProps> = ({ isOpen, onClose }) => {
             <div className="relative px-6 py-5 border-b border-[var(--border-color)]">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
-                  <div className="p-2 rounded-xl bg-[#FF5F1F]/10">
-                    <Clock size={20} className="text-[#FF5F1F]" strokeWidth={2.5} />
+                  <div className="p-2 rounded-xl bg-punk-gold/10">
+                    <Clock size={20} className="text-punk-gold" strokeWidth={2.5} />
                   </div>
                   <div>
                     <h2 className="text-lg font-black text-[var(--text-primary)] uppercase tracking-tight">
@@ -92,13 +92,13 @@ const ScheduleModal: React.FC<ScheduleModalProps> = ({ isOpen, onClose }) => {
             {/* Content */}
             <div className="max-h-[60vh] overflow-y-auto px-6 py-4 space-y-4">
               {schedules.map((schedule, index) => (
-                <div 
+                <div
                   key={schedule.id}
                   className="p-4 rounded-2xl bg-[var(--glass-bg-light)] border border-[var(--glass-border-light)]"
                 >
                   {/* Schedule Header */}
                   <div className="flex items-baseline gap-2 mb-3">
-                    <span className="text-[10px] font-black text-[#FF5F1F] tracking-wider">
+                    <span className="text-[10px] font-black text-punk-gold tracking-wider">
                       {schedule.id}
                     </span>
                     <h3 className="text-sm font-black text-[var(--text-primary)] uppercase tracking-tight">

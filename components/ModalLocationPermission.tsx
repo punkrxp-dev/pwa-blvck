@@ -31,8 +31,8 @@ const ModalLocationPermission: React.FC<ModalLocationPermissionProps> = ({
 
         {/* Ícone principal */}
         <div className="flex justify-center mb-4">
-          <div className="w-16 h-16 rounded-full bg-[#FF5F1F]/10 flex items-center justify-center">
-            <Navigation size={32} className="text-[#FF5F1F]" />
+          <div className="w-16 h-16 rounded-full bg-punk-gold/10 flex items-center justify-center">
+            <Navigation size={32} className="text-punk-gold" />
           </div>
         </div>
 
@@ -44,17 +44,17 @@ const ModalLocationPermission: React.FC<ModalLocationPermissionProps> = ({
         {/* Explicação */}
         <div className="space-y-3 mb-6">
           <p className="text-sm text-[var(--text-secondary)] leading-relaxed text-center">
-            Para fornecer dados climáticos <strong className="text-[#FF5F1F]">mais precisos</strong> e personalizados para sua região.
+            Para fornecer dados climáticos <strong className="text-punk-gold">mais precisos</strong> e personalizados para sua região.
           </p>
 
           {/* Benefícios */}
           <div className="space-y-2">
             <div className="flex items-center gap-2 text-xs text-[var(--text-secondary)]">
-              <MapPin size={12} className="text-[#FF5F1F] flex-shrink-0" />
+              <MapPin size={12} className="text-punk-gold flex-shrink-0" />
               <span>Dados climáticos da sua localização atual</span>
             </div>
             <div className="flex items-center gap-2 text-xs text-[var(--text-secondary)]">
-              <Shield size={12} className="text-[#FF5F1F] flex-shrink-0" />
+              <Shield size={12} className="text-punk-gold flex-shrink-0" />
               <span>Seus dados ficam apenas no seu dispositivo</span>
             </div>
           </div>
@@ -77,7 +77,7 @@ const ModalLocationPermission: React.FC<ModalLocationPermissionProps> = ({
           </button>
           <button
             onClick={onAllow}
-            className="flex-1 px-4 py-3 bg-[#FF5F1F] text-white rounded-xl font-bold uppercase text-xs tracking-widest hover:bg-[#FF5F1F]/90 transition-colors"
+            className="flex-1 px-4 py-3 bg-punk-gold text-punk-black rounded-xl font-bold uppercase text-xs tracking-widest hover:bg-punk-gold/90 transition-colors"
           >
             Permitir
           </button>

@@ -5,11 +5,16 @@
   "start_url": "/",
   "display": "standalone",
   "background_color": "#000000",
-  "theme_color": "#FF5F1F",
+  "theme_color": "#000000",
   "orientation": "portrait-primary",
   "scope": "/",
   "lang": "pt-BR",
-  "categories": ["fitness", "health", "sports", "lifestyle"],
+  "categories": [
+    "fitness",
+    "health",
+    "sports",
+    "lifestyle"
+  ],
   "icons": [
     {
       "src": "/icons/icon-72x72.png",
