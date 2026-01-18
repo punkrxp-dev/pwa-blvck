@@ -150,7 +150,7 @@ const CommunityInstagramWidget: React.FC = () => {
       </button>
 
       {/* Indicadores */}
-      <div className="absolute bottom-20 left-1/2 -translate-x-1/2 z-20 flex gap-1.5 opacity-0 group-hover:opacity-100 transition-opacity">
+      <div className="absolute bottom-6 left-6 z-20 flex gap-1.5 opacity-0 group-hover:opacity-100 transition-opacity">
         {instagramPosts.map((_, index) => (
           <button
             key={index}
@@ -168,63 +168,64 @@ const CommunityInstagramWidget: React.FC = () => {
         ))}
       </div>
 
-      {/* Overlay com informações do Instagram */}
-      <div className="absolute top-4 left-4 right-4 z-20 flex items-center justify-between">
-        {/* Logo do Instagram */}
-        <div className="flex items-center gap-2 bg-[var(--bg-secondary)]/60 backdrop-blur-sm rounded-full px-3 py-1.5">
-          <Instagram size={14} className={overlayTextClass} />
-          <span className={`text-xs font-bold ${overlayTextClass}`}>@PUNK.BLVCK</span>
+      {/* Header unificado com Instagram info */}
+      <div className="absolute top-4 left-4 right-4 z-20 flex items-start justify-between">
+        {/* Coluna esquerda: Instagram + Stats */}
+        <div className="flex flex-col gap-2">
+          {/* Logo do Instagram */}
+          <div className="flex items-center gap-2 bg-[var(--bg-secondary)]/80 backdrop-blur-md rounded-full px-3 py-1.5 shadow-lg">
+            <Instagram size={14} className={overlayTextClass} />
+            <span className={`text-xs font-bold ${overlayTextClass}`}>@PUNK.BLVCK</span>
+          </div>
+          
+          {/* Estatísticas do post */}
+          <div className="flex items-center gap-3 bg-[var(--bg-secondary)]/80 backdrop-blur-md rounded-full px-3 py-1.5 shadow-lg">
+            <div className="flex items-center gap-1">
+              <Heart size={12} className="text-red-500" fill="currentColor" />
+              <span className={`text-[11px] font-semibold ${overlayTextClass}`}>{currentPost.likes.toLocaleString()}</span>
+            </div>
+            <div className="flex items-center gap-1">
+              <MessageCircle size={12} />
+              <span className={`text-[11px] font-semibold ${overlayTextClass}`}>{currentPost.comments}</span>
+            </div>
+          </div>
         </div>
 
         {/* Contador de posts */}
-        <div className="bg-[var(--bg-secondary)]/60 backdrop-blur-sm rounded-full px-2 py-1">
-          <span className={`text-xs font-medium ${overlayTextClass}`}>
+        <div className="bg-[var(--bg-secondary)]/80 backdrop-blur-md rounded-full px-2.5 py-1 shadow-lg">
+          <span className={`text-[11px] font-bold ${overlayTextClass}`}>
             {currentPostIndex + 1}/{instagramPosts.length}
           </span>
         </div>
       </div>
 
-      {/* Estatísticas do post (curtidas, comentários) */}
-      <div className="absolute bottom-16 left-4 right-4 z-20">
-        <div className={`flex items-center gap-4 ${overlayTextClass}`}>
-          <div className="flex items-center gap-1">
-            <Heart size={14} className="text-red-500" />
-            <span className="text-xs font-medium">{currentPost.likes.toLocaleString()}</span>
-          </div>
-          <div className="flex items-center gap-1">
-            <MessageCircle size={14} />
-            <span className="text-xs font-medium">{currentPost.comments}</span>
-          </div>
-        </div>
-      </div>
-
       {/* Conteúdo principal */}
       <div className="relative z-[5] p-6 w-full h-full flex flex-col justify-end items-start text-left">
-        {/* Caption do post atual */}
-        <div className="mb-4">
-          <p className={`text-sm font-black uppercase tracking-wider leading-tight ${overlayTextClass}`}>
-            {currentPost.caption}
-          </p>
-        </div>
+        {/* Área de conteúdo organizada */}
+        <div className="space-y-3 w-full">
+          {/* Caption do post atual */}
+          <div className="bg-[var(--bg-secondary)]/70 backdrop-blur-md rounded-2xl px-4 py-2 inline-block shadow-lg">
+            <p className={`text-sm font-black uppercase tracking-wider leading-tight ${overlayTextClass}`}>
+              {currentPost.caption}
+            </p>
+          </div>
 
-        {/* Título da comunidade */}
-        <div>
-          <h3 className={`text-2xl font-black italic tracking-tighter leading-none uppercase group-hover:tracking-normal transition-all duration-500 mb-1 ${overlayTextClass}`}>
-            COMMUNITY
-          </h3>
-          <p className={`text-[10px] uppercase font-medium tracking-[0.2em] ${overlayTextClass}`}>
-            @PUNK.BLVCK
-          </p>
-          <p className={`text-[9px] mt-1 uppercase font-medium tracking-[0.15em] ${overlayTextClass}`}>
-            The lifestyle of the new power
-          </p>
+          {/* Título da comunidade */}
+          <div className="space-y-1">
+            <h3 className={`text-3xl font-black italic tracking-tighter leading-none uppercase group-hover:tracking-normal transition-all duration-500 ${overlayTextClass}`}>
+              COMMUNITY
+            </h3>
+            <p className={`text-[11px] uppercase font-bold tracking-[0.15em] opacity-90 ${overlayTextClass}`}>
+              The lifestyle of the new power
+            </p>
+          </div>
         </div>
 
         {/* Call to action */}
-        <div className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity">
-          <div className="flex items-center gap-1 bg-[#FF5F1F]/20 backdrop-blur-sm rounded-full px-3 py-1.5">
-            <Share size={12} className="text-[#FF5F1F]" />
-            <span className="text-xs font-bold text-[#FF5F1F]">FOLLOW</span>
+        <div className="absolute bottom-6 right-6 opacity-0 group-hover:opacity-100 transition-all duration-300">
+          <div className="flex items-center gap-2 bg-[#FF5F1F] backdrop-blur-md rounded-full px-4 py-2 shadow-xl hover:scale-105 transition-transform">
+            <Share size={14} className="text-white" />
+            <span className="text-xs font-bold text-white uppercase tracking-wide">Follow</span>
           </div>
         </div>
       </div>
