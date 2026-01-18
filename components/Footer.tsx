@@ -32,7 +32,7 @@ const Footer: React.FC = () => {
           >
             <MapPin size={12} className="text-[#FF5F1F] group-hover:scale-110 transition-transform" />
             <span>Shopping Plaza D'oro, Jardim Eldorado — Goiânia</span>
-            <ExternalLink size={10} className="opacity-50 group-hover:opacity-100 transition-opacity" />
+            <ExternalLink size={14} className="text-[#FF5F1F]" />
           </a>
           
           <p className="text-[9px] font-bold uppercase tracking-[0.4em] opacity-30 text-[var(--text-secondary)]">
