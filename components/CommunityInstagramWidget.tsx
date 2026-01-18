@@ -27,7 +27,7 @@ const instagramPosts = [
     imageUrl: 'https://images.unsplash.com/photo-1549060279-7e168fcee0c2?auto=format&fit=crop&q=80&w=800&h=600',
     likes: 312,
     comments: 15,
-    caption: 'FORGE THE ELITE',
+    caption: 'FORÇA COM RESULTADOS',
     alt: 'Transformação física impressionante'
   },
   {

@@ -67,6 +67,7 @@ caption: 'FORÇA COM MÉTODO'  // Use frases do manifesto
 ## 🎨 Exemplos de Configuração
 
 ### Post Atual (Exemplo Completo)
+
 ```javascript
 {
   id: 1,
@@ -79,6 +80,7 @@ caption: 'FORÇA COM MÉTODO'  // Use frases do manifesto
 ```
 
 ### Posts Sugeridos para @PUNK.BLVCK
+
 ```javascript
 const instagramPosts = [
   {
@@ -102,7 +104,7 @@ const instagramPosts = [
     imageUrl: '[URL_REAL_DO_INSTAGRAM]',
     likes: 445,
     comments: 22,
-    caption: 'FORGE THE ELITE',
+    caption: 'FORÇA COM RESULTADOS',
     alt: 'Transformação física impressionante'
   },
   {
@@ -119,6 +121,7 @@ const instagramPosts = [
 ## ⚙️ Configurações do Carrossel
 
 ### Tempo de Rotação
+
 ```typescript
 const ROTATION_TIME = 6000; // 6 segundos
 ```
@@ -131,16 +134,19 @@ const MAX_POSTS = 4; // Recomendado: 3-5 posts
 ## 🔧 Funcionalidades Técnicas
 
 ### Auto-Rotação
+
 - **Intervalo**: 6 segundos entre transições
 - **Pausa**: Para quando mouse sobre o componente
 - **Loop**: Navegação circular infinita
 
 ### Navegação Manual
+
 - **Botões**: Anterior/Próximo aparecem no hover
 - **Indicadores**: Dots para ir diretamente a um post
 - **Acessibilidade**: Labels ARIA completos
 
 ### Performance
+
 - **Lazy Loading**: Imagens carregam sob demanda
 - **Fallback**: Imagem padrão se URL falhar
 - **Cache**: Service Worker armazena imagens
@@ -148,6 +154,7 @@ const MAX_POSTS = 4; // Recomendado: 3-5 posts
 ## 🚨 Solução de Problemas
 
 ### Imagem não Carrega
+
 ```javascript
 onError={(e) => {
   // Fallback automático
@@ -156,31 +163,36 @@ onError={(e) => {
 ```
 
 ### Links do Instagram Quebrados
+
 - **Solução**: Use URLs do Unsplash como fallback
 - **Verificação**: Teste URLs em navegação anônima
 - **Alternativa**: Use CDN próprio para imagens
 
 ### Estatísticas Desatualizadas
+
 - **Atualização**: Edite manualmente likes/comments
 - **Automação**: Considere script para buscar dados reais
 
 ## 📊 Métricas de Engajamento
 
 ### Posições Estratégicas
+
 1. **Post 1**: Mais visual (primeira impressão)
 2. **Post 2**: Mais engajador (alta interação)
 3. **Post 3**: Mais impactante (transformação)
 4. **Post 4**: Call-to-action (ambiente sofisticado)
 
 ### Captions por Posição
+
 - **Posição 1**: "FORÇA COM MÉTODO" (introdução)
 - **Posição 2**: "PRESENCE IS POWER" (filosofia)
-- **Posição 3**: "FORGE THE ELITE" (resultado)
+- **Posição 3**: "FORÇA COM RESULTADOS" (resultado)
 - **Posição 4**: "LUXURY FITNESS" (diferencial)
 
 ## 🔄 Processo de Atualização
 
 ### Checklist de Atualização
+
 - [ ] Obter URLs das novas imagens
 - [ ] Verificar estatísticas atuais
 - [ ] Criar captions impactantes
