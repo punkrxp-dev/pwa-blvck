@@ -7,6 +7,7 @@ interface ProgramItem {
   id: string;
   title: string;
   subtitle: string;
+  detail: string;
 }
 
 const programs: ProgramItem[] = [
