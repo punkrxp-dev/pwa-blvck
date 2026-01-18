@@ -41,7 +41,7 @@ const AgendaWidget: React.FC = () => {
         <div className="w-1.5 h-1.5 rounded-full bg-[#FF5F1F] animate-pulse shadow-[0_0_8px_rgba(255,95,31,0.6)]" />
       </div>
 
-      <div className="space-y-3 flex-grow overflow-y-auto no-scrollbar pr-1">
+      <div className="grid grid-cols-2 gap-3 flex-grow">
         {isLoading ? (
           // Skeleton loaders para os programas
           Array.from({ length: 4 }).map((_, index) => (
