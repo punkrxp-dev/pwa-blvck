@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="PUNK | BLVCK - Presence is the new power. Elite fitness community in Goiânia.">
+    <meta name="keywords" content="fitness, elite, performance, training, goiânia">
+    <meta name="author" content="PUNK | BLVCK">
+    <!-- PWA Meta Tags -->
+    <meta name="theme-color" content="#FF5F1F">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="PUNK BLVCK">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="msapplication-TileColor" content="#FF5F1F">
+    <meta name="msapplication-config" content="/browserconfig.xml">
+    <!-- Open Graph / Facebook -->
+    <meta property="og:title" content="PUNK | BLVCK - Presence is the new power">
+    <meta property="og:description" content="Elite fitness community in Goiânia">
+    <meta property="og:image" content="https://res.cloudinary.com/de5jsf8pj/image/upload/v1767914884/blvck_logo_whofxk.png">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://punk-blvck.vercel.app">
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <!-- PWA Links -->
+    <link rel="manifest" href="/manifest.json">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <!-- Apple Touch Icons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/icons/icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/icons/icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/icons/icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/icons/icon-114x114.png">
+    <!-- Microsoft Tiles -->
+    <meta name="msapplication-square70x70logo" content="/icons/icon-70x70.png">
+    <meta name="msapplication-square150x150logo" content="/icons/icon-150x150.png">
+    <meta name="msapplication-wide310x150logo" content="/icons/icon-310x150.png">
+    <meta name="msapplication-square310x310logo" content="/icons/icon-310x310.png">
+    <title>PUNK | BLVCK - Presence is the new power</title>
+    <!-- Content Security Policy -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com https://esm.sh; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' https: data:; connect-src 'self' https:; media-src 'self'; object-src 'none'; frame-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests;">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        --punk-orange: #FF5F1F;
+        --glass-border: rgba(255, 255, 255, 0.12);
+        --glass-bg: rgba(255, 255, 255, 0.03);
+
+        /* Tema Base */
+        --bg-primary: #000000;
+        --bg-secondary: #111111;
+        --text-primary: #FFFFFF;
+        --text-secondary: rgba(255, 255, 255, 0.6);
+        --text-muted: rgba(255, 255, 255, 0.4);
+        --border-color: rgba(255, 255, 255, 0.1);
+        --glass-bg-light: rgba(255, 255, 255, 0.03);
+        --glass-border-light: rgba(255, 255, 255, 0.12);
+      }
+
+      /* Tema Claro */
+      .light {
+        --bg-primary: #FFFFFF;
+        --bg-secondary: #F8F9FA;
+        --text-primary: #000000;
+        --text-secondary: rgba(0, 0, 0, 0.6);
+        --text-muted: rgba(0, 0, 0, 0.4);
+        --border-color: rgba(0, 0, 0, 0.1);
+        --glass-bg-light: rgba(0, 0, 0, 0.03);
+        --glass-border-light: rgba(0, 0, 0, 0.12);
+      }
+
+      /* Tema Escuro (padrão) */
+      .dark {
+        --bg-primary: #000000;
+        --bg-secondary: #111111;
+        --text-primary: #FFFFFF;
+        --text-secondary: rgba(255, 255, 255, 0.6);
+        --text-muted: rgba(255, 255, 255, 0.4);
+        --border-color: rgba(255, 255, 255, 0.1);
+        --glass-bg-light: rgba(255, 255, 255, 0.03);
+        --glass-border-light: rgba(255, 255, 255, 0.12);
+      }
+      body {
+        font-family: 'Inter', sans-serif;
+        background-color: var(--bg-primary);
+        color: var(--text-primary);
+        margin: 0;
+        overflow-x: hidden;
+        -webkit-font-smoothing: antialiased;
+      }
+      
+      /* Textura de Vidro Físico */
+      .glass-noise {
+        position: relative;
+        background: var(--glass-bg-light);
+        -webkit-backdrop-filter: blur(24px) saturate(180%);
+        backdrop-filter: blur(24px) saturate(180%);
+        border: 1px solid var(--glass-border-light);
+      }
+      
+      .glass-noise::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3仿真 %3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+        opacity: 0.025;
+        pointer-events: none;
+      }
+
+      /* Brilho de borda superior para realismo 3D */
+      .glass-sheen {
+        position: absolute;
+        inset: 0;
+        border-radius: inherit;
+        pointer-events: none;
+        background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 40%, rgba(255,255,255,0) 60%, rgba(255,255,255,0.05) 100%);
+      }
+
+      .glow-orange {
+        filter: drop-shadow(0 0 8px rgba(255, 95, 31, 0.3));
+      }
+
+      .bg-punk-background {
+        background-image: url('https://res.cloudinary.com/de5jsf8pj/image/upload/v1768698644/88e0017f9be3e14028320e7574850413_i6hd6z.jpg');
+      }
+
+      @keyframes timer-pulse {
+        0%, 100% { opacity: 1; transform: scale(1); filter: brightness(1); }
+        50% { opacity: 0.9; transform: scale(1.02); filter: brightness(1.2); }
+      }
+      .animate-timer-active {
+        animation: timer-pulse 2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+      }
+
+      .no-scrollbar::-webkit-scrollbar { display: none; }
+      .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+      @supports (scrollbar-width: none) { .no-scrollbar { scrollbar-width: none; } }
+
+      ::selection {
+        background: var(--punk-orange);
+        color: white;
+      }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "lucide-react": "https://esm.sh/lucide-react@^0.562.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3"
+  }
+}
+</script>
+</head>
+<body>
+    <div id="root"></div>
+<script type="module" src="/index.tsx"></script>
+</body>
+</html>
