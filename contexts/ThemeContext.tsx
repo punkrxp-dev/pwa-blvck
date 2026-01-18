@@ -34,20 +34,25 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
   const applyTheme = (newActualTheme: 'light' | 'dark', themeToSave: Theme) => {
     const root = document.documentElement;
 
-    // Remover classes anteriores
-    root.classList.remove('light', 'dark');
+    // Usar requestAnimationFrame para garantir que a mudança seja feita no próximo frame
+    requestAnimationFrame(() => {
+      // Remover classes anteriores
+      root.classList.remove('light', 'dark');
 
-    // Adicionar classe do tema atual
-    root.classList.add(newActualTheme);
+      // Adicionar classe do tema atual
+      root.classList.add(newActualTheme);
 
-    // Atualizar meta theme-color
-    const metaThemeColor = document.querySelector('meta[name="theme-color"]');
-    if (metaThemeColor) {
-      metaThemeColor.setAttribute('content', newActualTheme === 'dark' ? '#000000' : '#FF5F1F');
-    }
+      // Atualizar meta theme-color
+      const metaThemeColor = document.querySelector('meta[name="theme-color"]');
+      if (metaThemeColor) {
+        metaThemeColor.setAttribute('content', newActualTheme === 'dark' ? '#000000' : '#FF5F1F');
+      }
 
-    // Salvar no localStorage
-    localStorage.setItem('punk-blvck-theme', themeToSave);
+      // Salvar no localStorage (não bloqueia a UI)
+      setTimeout(() => {
+        localStorage.setItem('punk-blvck-theme', themeToSave);
+      }, 0);
+    });
 
     logger.info('Theme applied', { theme: newActualTheme }, 'ThemeContext');
   };

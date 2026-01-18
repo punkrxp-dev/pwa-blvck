@@ -19,7 +19,7 @@ const Footer: React.FC = () => {
             className="h-8 w-auto object-contain"
           />
           <p className="text-[10px] font-black uppercase tracking-[0.3em] text-[#FF5F1F]">
-            Presence is the new power.
+            PRESENCE IS THE NEW POWER
           </p>
         </div>
 

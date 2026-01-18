@@ -33,7 +33,7 @@ const AppContent: React.FC = () => {
   }
 
   return (
-    <div className="min-h-screen flex flex-col bg-[var(--bg-primary)] selection:bg-[#FF5F1F]/30 transition-colors duration-300">
+    <div className="min-h-screen flex flex-col bg-[var(--bg-primary)] selection:bg-[#FF5F1F]/30 theme-transition">
       {/* Background Layers - só mostrar no tema escuro */}
       {actualTheme === 'dark' && (
         <div className="fixed inset-0 pointer-events-none z-0">

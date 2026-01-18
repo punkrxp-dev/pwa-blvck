@@ -3,6 +3,14 @@ import { useTheme } from '../contexts/ThemeContext';
 
 const LoadingScreen: React.FC = () => {
   const { actualTheme } = useTheme();
+
+  // Não aplicar transições durante o loading para performance
+  React.useEffect(() => {
+    document.documentElement.style.transition = 'none';
+    return () => {
+      document.documentElement.style.transition = '';
+    };
+  }, []);
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-[var(--bg-primary)]">
       {/* Background Layers - só mostrar no tema escuro */}
@@ -44,7 +52,7 @@ const LoadingScreen: React.FC = () => {
             PUNK | BLVCK
           </h1>
           <p className="text-sm text-[var(--text-secondary)] uppercase tracking-widest">
-            Presence is the new power
+            PRESENCE IS THE NEW POWER
           </p>
         </div>
 
