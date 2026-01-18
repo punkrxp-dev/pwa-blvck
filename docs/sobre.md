@@ -51,3 +51,9 @@ Sem exagero. Sem promessa vazia. Sem pressa.
 Você treina. Você sente. Você vive.
 
 PUNK BLVCK — A sua força, em estado presente.
+
+<div align="center">
+**Author:** NEØ Protocol  
+**Last Updated:** 2026-01-17  
+  <i>"Expand until silence becomes structure."</i>
+</div>

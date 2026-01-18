@@ -142,3 +142,9 @@ Para problemas com APIs:
 ---
 
 **PUNK | BLVCK** — Dados precisos, experiência impecável. ⚡📍
+
+<div align="center">
+**Author:** NEØ Protocol  
+**Last Updated:** 2026-01-17  
+  <i>"Expand until silence becomes structure."</i>
+</div>

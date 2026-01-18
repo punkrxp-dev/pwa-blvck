@@ -211,3 +211,10 @@ onError={(e) => {
 **Dica**: Mantenha sempre 4 posts para experiência otimizada!
 
 **Para dúvidas**: Verifique o console do navegador para logs de debug.
+
+<div align="center">
+
+**Author:** NEØ Protocol  
+**Last Updated:** 2026-01-17  
+  <i>"Expand until silence becomes structure."</i>
+</div>
