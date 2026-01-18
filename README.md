@@ -6,62 +6,62 @@
 [![Security](https://img.shields.io/badge/security-hardened-blue)](https://github.com)
 [![WCAG](https://img.shields.io/badge/accessibility-WCAG--compliant-green)](https://github.com)
 
-## 📋 Sobre
+## ⧉ Sobre
 
 PUNK BLVCK é um centro de treinamento de musculação e treino funcional contemporâneo para quem valoriza performance com método, estética com propósito e bem-estar com intenção.
 
-### ✨ Características
+### ⍟ Características
 
-- 🏋️ **Treino Funcional**: Performance real com orientação personalizada
-- 🎨 **Design Contemporâneo**: Arquitetura moderna e atendimento humanizado
-- 💎 **Luxo Acessível**: Quiet luxury com influência fashion design
-- ⚡ **Clean Energy**: Energia organizada e fluida
-- 🎯 **Presença como Poder**: Método cíclico e bem-estar intencional
+- ⦿ **Treino Funcional**: Performance real com orientação personalizada
+- ⧗ **Design Contemporâneo**: Arquitetura moderna e atendimento humanizado
+- ⟠ **Luxo Acessível**: Quiet luxury com influência fashion design
+- ⧖ **Clean Energy**: Energia organizada e fluida
+- ⦿ **Presença como Poder**: Método cíclico e bem-estar intencional
 
-## 🌤️ API de Clima com GPS
+## ◯ API de Clima com GPS
 
 O aplicativo inclui **dados meteorológicos em tempo real** baseados na localização GPS do usuário:
 
-### ✨ Características
-- 📍 **Geolocalização automática** via GPS do dispositivo
-- 🌡️ **Dados em tempo real** da OpenWeatherMap API
-- 🗺️ **Nomes de cidades** via reverse geocoding
-- 💾 **Cache inteligente** para performance
-- 🔄 **Atualização manual** com botão refresh
+### ⍟ Características
+- ⦿ **Geolocalização automática** via GPS do dispositivo
+- ⧗ **Dados em tempo real** da OpenWeatherMap API
+- ⧉ **Nomes de cidades** via reverse geocoding
+- ⧇ **Cache inteligente** para performance
+- ⨀ **Atualização manual** com botão refresh
 
-## 📸 Instagram Integrado
+## ⧉ Instagram Integrado
 
 O PUNK | BLVCK possui um **carrossel interativo de posts do Instagram** diretamente na interface:
 
-### 🌟 Características
+### ⍟ Características
 - **Carrossel automático** com rotação suave
 - **Navegação manual** e indicadores visuais
 - **Estatísticas reais** (curtidas, comentários)
 - **Pausa no hover** para melhor leitura
 
-## 📱 PWA (Progressive Web App)
+## ◱ PWA (Progressive Web App)
 
 O PUNK | BLVCK é uma **Progressive Web App completa**:
 
-### 🚀 Características PWA
+### ⟁ Características PWA
 - **Instalação nativa** em iOS e Android
 - **Funcionamento offline** com cache inteligente
 - **Experiência nativa** com splash screen e atalhos rápidos
 - **Micro-interações** via giroscópio e parallax
 
-## � Documentação
+## ⧉ Documentação
 
 Para mais detalhes sobre o projeto, acesse:
 
-- 🛠️ [**Guia de Configuração Técnica (SETUP.md)**](./SETUP.md): Instalação, comandos e arquitetura.
-- 💎 [**Experiência Digital (BLVCK.md)**](./EXPERIENCIA_DIGITAL_BLVCK.md): Guia de funcionalidades para usuários.
-- �️ [**Configuração de Clima**](./docs/WEATHER_API_SETUP.md): Detalhes da API OpenWeather.
+- ⧗ [**Guia de Configuração Técnica (SETUP.md)**](./SETUP.md): Instalação, comandos e arquitetura.
+- ⟠ [**Experiência Digital (BLVCK.md)**](./EXPERIENCIA_DIGITAL_BLVCK.md): Guia de funcionalidades para usuários.
+- ◯ [**Configuração de Clima**](./docs/WEATHER_API_SETUP.md): Detalhes da API OpenWeather.
 
-## 📝 Changelog
+## ⧉ Changelog
 
 Veja o [CHANGELOG.md](CHANGELOG.md) para detalhes das últimas atualizações e correções de segurança.
 
-## 📞 Contato
+## ⦿ Contato
 
 - **Instagram**: [@PUNK.BLVCK](https://instagram.com/PUNK.BLVCK)
 - **Localização**: Shopping Plaza D'oro — Goiânia, GO

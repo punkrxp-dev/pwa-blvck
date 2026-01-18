@@ -4,7 +4,7 @@ Este arquivo contém as instruções técnicas, arquitetura e processos de desen
 
 ---
 
-## 🚀 Tecnologias
+## ⟁ Tecnologias
 
 - **Frontend**: React 19 + TypeScript + Vite
 - **Styling**: Tailwind CSS + Glassmorphism
@@ -13,22 +13,22 @@ Este arquivo contém as instruções técnicas, arquitetura e processos de desen
 - **Security**: CSP + Sanitização + SafeImage component
 - **Accessibility**: WCAG compliant + ARIA labels
 
-## 🛡️ Segurança
+## ⧇ Segurança
 
 Este projeto implementa as melhores práticas de segurança:
 
-- ✅ **CSP (Content Security Policy)** completo
-- ✅ **Zero vulnerabilidades** conhecidas (npm audit)
-- ✅ **Sanitização** de todas as entradas
-- ✅ **SafeImage** component com fallbacks
-- ✅ **Error Boundaries** para crash prevention
-- ✅ **Memory leak protection**
-- ✅ **AudioContext** seguro com fallbacks
+- ⦿ **CSP (Content Security Policy)** completo
+- ⦿ **Zero vulnerabilidades** conhecidas (npm audit)
+- ⦿ **Sanitização** de todas as entradas
+- ⦿ **SafeImage** component com fallbacks
+- ⦿ **Error Boundaries** para crash prevention
+- ⦿ **Memory leak protection**
+- ⦿ **AudioContext** seguro com fallbacks
 
-## 🏗️ Arquitetura
+## ⧇ Arquitetura
 
 ```
-📁 components/
+⧉ components/
 ├── ErrorBoundary.tsx     # Global error handling
 ├── SafeImage.tsx         # Secure image loading
 ├── WeatherWidget.tsx     # Cached weather component
@@ -38,13 +38,13 @@ Este projeto implementa as melhores práticas de segurança:
 ├── Header.tsx           # Status header
 ├── Footer.tsx           # Contact footer
 └── GlassCard.tsx        # Glassmorphism UI
-📁 utils/
+⧉ utils/
 └── logger.ts            # Production logging
-📁 hooks/
+⧉ hooks/
 └── useGyroscope.ts      # Device orientation logic
 ```
 
-## 🚀 Instalação e Execução
+## ⟁ Instalação e Execução
 
 **Pré-requisitos:** Node.js 18+, Make (opcional)
 
@@ -78,7 +78,7 @@ npm run dev
 npm run build
 ```
 
-## 🎯 Comandos Make Disponíveis
+## ⦿ Comandos Make Disponíveis
 
 | Comando | Descrição |
 |---------|-----------|
@@ -90,28 +90,28 @@ npm run build
 | `make lint` | Executa linting |
 | `make format` | Formata código com Prettier |
 
-## 🌤️ Configuração da API de Clima
+## ◯ Configuração da API de Clima
 
 1. **API Gratuita**: Cadastre-se em [OpenWeatherMap](https://openweathermap.org/)
 2. **Configure variáveis**: Copie `env.example` para `.env`
 3. **Adicione chave**: `VITE_OPENWEATHER_API_KEY=sua_chave_aqui`
 
-📖 **Guia completo**: Veja [WEATHER_API_SETUP.md](docs/WEATHER_API_SETUP.md) para instruções detalhadas.
+⧉ **Guia completo**: Veja [WEATHER_API_SETUP.md](docs/WEATHER_API_SETUP.md) para instruções detalhadas.
 
-## 📊 Performance
+## ⧇ Performance
 
 - **Bundle Size**: ~500KB (Otimizado)
 - **Build Time**: ~1.5s
 - **Zero Layout Shift**: Otimizado para Core Web Vitals
 - **Sincronização**: Localização via GPS com fallback imediato
 
-## ♿ Acessibilidade
+## ◯ Acessibilidade
 
-- ✅ **WCAG 2.1 AA** compliant
-- ✅ **Screen reader** support
-- ✅ **Keyboard navigation** completa
-- ✅ **Focus management** adequado
-- ✅ **Color contrast** verificado
+- ⦿ **WCAG 2.1 AA** compliant
+- ⦿ **Screen reader** support
+- ⦿ **Keyboard navigation** completa
+- ⦿ **Focus management** adequado
+- ⦿ **Color contrast** verificado
 
 ---
 

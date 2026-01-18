@@ -4,12 +4,12 @@ Este documento apresenta a nova interface digital da **PUNK | BLVCK**, um WebAPP
 
 ---
 
-## 🚀 O Futuro na Palma da sua Mão
+## ⟁ O Futuro na Palma da sua Mão
 Este WebAPP é muito mais que um site; é a ponte definitiva para a nossa presença oficial nas lojas **Apple Store** e **Google Play Store**. Por ser um PWA, ele oferece a velocidade e a imersão de um aplicativo nativo diretamente no seu navegador, permitindo a instalação instantânea na tela inicial do seu celular sem ocupar memória excessiva. Estamos a apenas um passo de nos tornarmos um App híbrido completo nas grandes lojas.
 
 ---
 
-## 💎 Funcionalidades Exclusivas
+## ⟠ Funcionalidades Exclusivas
 
 ### 1. Status de Presença Dinâmico
 O topo do aplicativo exibe em tempo real se a nossa unidade está aberta, fechada ou **"Quase Aberta"** (com um indicador pulsante em dourado). Ele também detecta sua localização para exibir as condições climáticas e temperatura atual, conectando o clima da cidade ao seu treino.
@@ -38,7 +38,7 @@ A logo principal reage ao movimento do seu celular. Ao inclinar o aparelho, a in
 
 ---
 
-## 🛠️ Como Instalar (Como um App)
+## ⧗ Como Instalar (Como um App)
 
 Não é necessário procurar em lojas agora:
 1.  **No iPhone (Safari):** Toque no botão "Compartilhar" (quadrado com seta) e selecione **"Adicionar à Tela de Início"**.
