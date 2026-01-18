@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Header from './components/Header';
 import BentoGrid from './components/BentoGrid';
 import Footer from './components/Footer';
 import PWAInstallPrompt from './components/PWAInstallPrompt';
+import LoadingScreen from './components/LoadingScreen';
 import { ThemeProvider, useTheme } from './contexts/ThemeContext';
 import { useServiceWorker } from './hooks/useServiceWorker';
 
@@ -12,6 +13,23 @@ const AppContent: React.FC = () => {
 
   // Hook do Tema
   const { actualTheme } = useTheme();
+
+  // Estado de loading
+  const [isLoading, setIsLoading] = useState(true);
+
+  // Simular tempo de carregamento mínimo
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 2500); // 2.5 segundos para uma boa experiência
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  // Mostrar loading screen enquanto carrega
+  if (isLoading) {
+    return <LoadingScreen />;
+  }
 
   return (
     <div className="min-h-screen flex flex-col bg-[var(--bg-primary)] selection:bg-[#FF5F1F]/30 transition-colors duration-300">
