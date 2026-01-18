@@ -7,7 +7,11 @@ import { useTheme } from '../contexts/ThemeContext';
 
 type ChronoMode = 'CRONO' | 'TIMER' | 'EMOM';
 
-const TimerWidget: React.FC = () => {
+interface TimerWidgetProps {
+  id?: string;
+}
+
+const TimerWidget: React.FC<TimerWidgetProps> = ({ id }) => {
   const { actualTheme } = useTheme();
   const [mode, setMode] = useState<ChronoMode>('CRONO');
   const [elapsedTime, setElapsedTime] = useState(0); // For CRONO
@@ -218,6 +222,7 @@ const TimerWidget: React.FC = () => {
 
   return (
     <GlassCard
+      id={id}
       span={isExpanded ? "row-2" : "col-1"}
       className={`bg-gradient-to-br from-punk-black to-zinc-900/50 flex flex-col p-4 transition-all duration-500 ease-in-out ${isExpanded ? 'z-20' : 'z-0'}`}
     >

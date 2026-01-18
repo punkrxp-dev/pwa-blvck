@@ -17,7 +17,11 @@ const programs: ProgramItem[] = [
   { id: '4', title: '.YOGA', subtitle: 'MOBILITY', detail: 'Calm recovery to balance high-intensity work' },
 ];
 
-const AgendaWidget: React.FC = () => {
+interface AgendaWidgetProps {
+  id?: string;
+}
+
+const AgendaWidget: React.FC<AgendaWidgetProps> = ({ id }) => {
   const [isLoading, setIsLoading] = useState(true);
 
   // Simular carregamento dos programas
@@ -30,7 +34,7 @@ const AgendaWidget: React.FC = () => {
   }, []);
 
   return (
-    <GlassCard span="row-3" className="flex flex-col">
+    <GlassCard id={id} span="row-3" className="flex flex-col">
       <div className="flex items-center justify-between mb-3">
         <div className="flex flex-col">
           <div className="flex items-center gap-1.5 text-[var(--text-secondary)] mb-0.5">

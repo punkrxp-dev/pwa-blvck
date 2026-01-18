@@ -60,9 +60,7 @@ const BentoGrid: React.FC = () => {
       </ErrorBoundary>
 
       <ErrorBoundary>
-        <div id="timer-widget">
-          <TimerWidget />
-        </div>
+        <TimerWidget id="timer-widget" />
       </ErrorBoundary>
 
       <ErrorBoundary>
@@ -92,9 +90,7 @@ const BentoGrid: React.FC = () => {
       </ErrorBoundary>
 
       <ErrorBoundary>
-        <div id="agenda-widget">
-          <AgendaWidget />
-        </div>
+        <AgendaWidget id="agenda-widget" />
       </ErrorBoundary>
 
       <ErrorBoundary>
