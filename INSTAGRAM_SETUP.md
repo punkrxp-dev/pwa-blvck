@@ -24,9 +24,11 @@ Cada post do Instagram é representado por um objeto com as seguintes propriedad
 ## 🔄 Como Atualizar as Imagens
 
 ### 1. Localizar o Arquivo
+
 Edite o arquivo: `src/components/CommunityInstagramWidget.tsx`
 
 ### 2. Encontrar o Array `instagramPosts`
+
 ```typescript
 const instagramPosts = [
   // Posts atuais aqui...
@@ -36,18 +38,22 @@ const instagramPosts = [
 ### 3. Obter URLs das Imagens
 
 #### Método 1: URL Direta do Instagram
+
 1. Abra o post no Instagram
 2. Clique com botão direito na imagem
 3. "Copiar endereço da imagem"
 4. Use a URL copiada
 
 #### Método 2: URL do Unsplash (Fallback)
+
 Use imagens do [Unsplash](https://unsplash.com) com temas fitness:
+
 ```javascript
 imageUrl: 'https://images.unsplash.com/photo-[ID]?auto=format&fit=crop&q=80&w=800&h=600'
 ```
 
 ### 4. Atualizar Estatísticas
+
 ```javascript
 likes: 247,      // Número real de curtidas
 comments: 12,    // Número real de comentários
